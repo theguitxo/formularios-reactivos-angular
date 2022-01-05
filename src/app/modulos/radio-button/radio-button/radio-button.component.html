@@ -1,0 +1,16 @@
+<!-- Radio button con valor requerido -->
+<div class="row px-8 border-bottom mb-4">
+  <div class="col-6">
+    <ng-container *ngFor="let valor of valores; let idx = index">
+      <div class="form-check pb-2">
+        <input class="form-check-input" type="radio" name="radio" id="{{ 'radio' + idx }}" [value]="valor.valor">
+        <label class="form-check-label" for="{{ 'radio' + idx }}">
+          {{ valor.etiqueta }}
+        </label>
+      </div>
+    </ng-container>
+  </div>
+  <div class="col-6">
+    sverets!
+  </div>
+</div>

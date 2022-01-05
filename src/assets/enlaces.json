@@ -1,0 +1,22 @@
+[
+  {
+    "orden": 10,
+    "ruta": "/inicio",
+    "titulo": "Inicio"
+  },
+  {
+    "orden": 20,
+    "ruta": "/input-text",
+    "titulo": "Input text"
+  },
+  {
+    "orden": 30,
+    "ruta": "/radio-button",
+    "titulo": "Radio button"
+  },
+  {
+    "orden": 40,
+    "ruta": "/selector",
+    "titulo": "Selector"
+  }
+]

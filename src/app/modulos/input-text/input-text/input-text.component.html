@@ -1,0 +1,139 @@
+<!-- Input de texto -->
+<div class="row px-0 border-bottom mb-4">
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        id="inputTexto"
+        class="form-control"
+        placeholder="Input de texto"
+        [formControl]="inputTexto" />
+      <label for="inputTexto">Input de texto</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <app-tabla-datos [control]="inputTexto"></app-tabla-datos>
+  </div>
+</div>
+
+<!-- Input de texto con valor requerido -->
+<div class="row px-0 border-bottom mb-4">
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        id="inputTextoRequerido"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': (inputTextoRequerido.errors && !inputTextoRequerido.pristine) }"
+        placeholder="Input de texto con valor requerido"
+        [formControl]="inputTextoRequerido" />
+      <label for="inputTextoRequerido">Input de texto con valor requerido</label>
+      <div *ngIf="inputTextoRequerido.errors && !inputTextoRequerido.pristine" class="invalid-feedback">
+        <div *ngIf="inputTextoRequerido.errors.required">El valor es obligatorio</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <app-tabla-datos [control]="inputTextoRequerido"></app-tabla-datos>
+  </div>
+</div>
+
+<!-- Input de texto con comprobación de mínimo y máximo de cadena -->
+<div class="row px-0 border-bottom mb-4">
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        id="inputTextoMinimoMaximoLargo"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': (inputTextoMinimoMaximoLargo.errors && !inputTextoMinimoMaximoLargo.pristine) }"
+        placeholder="Input de texto con mínimo y máximo de largo de cadena"
+        [formControl]="inputTextoMinimoMaximoLargo" />
+      <label for="inputTextoMinimoMaximoLargo">Input de texto con mínimo y máximo de largo de cadena</label>
+      <div *ngIf="inputTextoMinimoMaximoLargo.errors && !inputTextoMinimoMaximoLargo.pristine" class="invalid-feedback">
+        <div *ngIf="inputTextoMinimoMaximoLargo.errors.minlength">
+          Se requieren un mínimo de {{ inputTextoMinimoMaximoLargo.errors.minlength.requiredLength }} (la cadena contiene {{ inputTextoMinimoMaximoLargo.errors.minlength.actualLength }})
+        </div>
+        <div *ngIf="inputTextoMinimoMaximoLargo.errors.maxlength">
+          No se pueden superar los {{ inputTextoMinimoMaximoLargo.errors.maxlength.requiredLength }} caracteres (la cadena contiene {{ inputTextoMinimoMaximoLargo.errors.maxlength.actualLength }})
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <app-tabla-datos [control]="inputTextoMinimoMaximoLargo"></app-tabla-datos>
+  </div>
+</div>
+
+<!-- Input de texto con compobración de e-mail válido -->
+<div class="row px-0 border-bottom mb-4">
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input
+        type="email"
+        id="inputTextoEmail"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': (inputTextoEmail.errors && !inputTextoEmail.pristine) }"
+        placeholder="Input de texto formato de e-mail válido"
+        [formControl]="inputTextoEmail" />
+      <label for="inputTextoEmail">Input de texto formato de e-mail válido</label>
+      <div *ngIf="inputTextoEmail.errors && !inputTextoEmail.pristine" class="invalid-feedback">
+        <div *ngIf="inputTextoEmail.errors.email">Se requiere un formato de e-mail válidos</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <app-tabla-datos [control]="inputTextoEmail"></app-tabla-datos>
+  </div>
+</div>
+
+<!-- Input numérico con comprobación de mínimo y máximo-->
+<div class="row px-0 border-bottom mb-4">
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input
+        type="number"
+        id="inputNumericoMinimoMaximo"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': (inputNumericoMinimoMaximo.errors && !inputNumericoMinimoMaximo.pristine) }"
+        placeholder="Input numérico con comprobación de mínimo y máximo"
+        [formControl]="inputNumericoMinimoMaximo" />
+      <label for="inputNumericoMinimoMaximo">Input numérico con comprobación de mínimo y máximo</label>
+      <div *ngIf="inputNumericoMinimoMaximo.errors && !inputNumericoMinimoMaximo.pristine" class="invalid-feedback">
+        <div *ngIf="inputNumericoMinimoMaximo.errors.min">
+          El mínimo es {{ inputNumericoMinimoMaximo.errors.min.min }} (el valor actual es {{ inputNumericoMinimoMaximo.errors.min.actual }})
+        </div>
+        <div *ngIf="inputNumericoMinimoMaximo.errors.max">
+          El máximo es {{ inputNumericoMinimoMaximo.errors.max.max }} caracteres (el valor actual es {{ inputNumericoMinimoMaximo.errors.max.actual }})
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <app-tabla-datos [control]="inputNumericoMinimoMaximo"></app-tabla-datos>
+  </div>
+</div>
+
+<!-- Input de texto con validación de patrón-->
+<div class="row px-0 border-bottom mb-4">
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        id="inputTextoPattern"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': (inputTextoPattern.errors && !inputTextoPattern.pristine) }"
+        placeholder="Input de texto con comprobación de patrón"
+        [formControl]="inputTextoPattern" />
+      <label for="inputTextoPattern">Input de texto con comprobación de patrón</label>
+      <div *ngIf="inputTextoPattern.errors && !inputTextoPattern.pristine" class="invalid-feedback">
+        <div *ngIf="inputTextoPattern.errors.pattern">
+          El texto debe cumplir el patrón XXXXX-XXX
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <app-tabla-datos [control]="inputTextoPattern"></app-tabla-datos>
+  </div>
+</div>

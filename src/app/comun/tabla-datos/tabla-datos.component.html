@@ -1,0 +1,26 @@
+<table class="table table-success table-striped">
+  <tbody>
+    <tr>
+      <th class="w-25">PRISTINE</th>
+      <td>{{ control.pristine }}</td>
+    </tr>
+    <tr>
+      <th class="w-25">TOUCHED</th>
+      <td>{{ control.touched }}</td>
+    </tr>
+    <tr>
+      <th class="w-25">VALUE</th>
+      <td>{{ control.value }}</td>
+    </tr>
+    <tr>
+      <th class="w-25">STATE</th>
+      <td>{{ control.status }}</td>
+    </tr>
+    <tr>
+      <th class="w-25">ERRORS</th>
+      <td>
+        <ng-container *ngIf="control.errors">{{ control.errors | json }}</ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>
