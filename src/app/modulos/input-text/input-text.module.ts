@@ -1,7 +1,7 @@
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ComunModule } from "src/app/comun/comun.module";
 import { InputTextRoutingModule } from "./input-text-routing.module";
+import { CVAInputTextComponent } from "./input-text/cva-input-text/cva-input-text.component";
 import { InputTextComponent } from './input-text/input-text.component';
 
 @NgModule({
@@ -10,7 +10,8 @@ import { InputTextComponent } from './input-text/input-text.component';
     InputTextRoutingModule
   ],
   declarations: [
-    InputTextComponent
+    InputTextComponent,
+    CVAInputTextComponent
   ]
 })
 export class InputTextModule {}

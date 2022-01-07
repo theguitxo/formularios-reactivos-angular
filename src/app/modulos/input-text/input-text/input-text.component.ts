@@ -26,6 +26,9 @@ export class InputTextComponent implements OnInit {
   // input de texto con comprobación de patrón
   inputTextoPattern!: FormControl;
 
+  // input usando un Custom Value Accessor
+  inputTextoCVA!: FormControl;
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -35,6 +38,7 @@ export class InputTextComponent implements OnInit {
     this.buildInputTextoEmail();
     this.buildInputNumbericoMinimoMaximo();
     this.buildInputTextoPattern();
+    this.buidlInputTextoCVA();
   }
 
   /**
@@ -101,5 +105,28 @@ export class InputTextComponent implements OnInit {
       value: '',
       disabled: false,
     }, Validators.pattern(/[a-zA-Z]{5,5}-[a-zA-Z]{3,3}$/));
+  }
+
+  /**
+   * crea el input que usa Control Value Accessor
+   */
+  buidlInputTextoCVA(): void {
+    this.inputTextoCVA = this.fb.control({
+      value: '',
+      disabled: false,
+    }, Validators.required);
+  }
+
+  codigoAleatorio(): void {
+    const teclas = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+    this.inputTextoCVA.setValue(new Array(16).fill('').map((item) => teclas[Math.floor(Math.random() * teclas.length)]).join(''));
+  }
+
+  deshabilitarControl(): void {
+    this.inputTextoCVA.disable();
+  }
+
+  habilitarControl(): void {
+    this.inputTextoCVA.enable();
   }
 }

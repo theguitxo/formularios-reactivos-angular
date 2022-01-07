@@ -2,11 +2,11 @@
 <div class="row px-8 border-bottom mb-4">
   <div class="col-6">
     <app-custom-radio-button
-      [valores]="valores">
-      [formControl]="inputRadioRequerido">
+      [valores]="valores"
+      [control]="inputRadioRequerido">
     </app-custom-radio-button>
   </div>
   <div class="col-6">
-    sverets!
+    <app-tabla-datos [control]="inputRadioRequerido"></app-tabla-datos>
   </div>
 </div>

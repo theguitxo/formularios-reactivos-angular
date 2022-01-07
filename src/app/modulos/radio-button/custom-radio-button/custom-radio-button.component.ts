@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { AbstractControl } from "@angular/forms";
+import { FormControl } from "@angular/forms";
 import { IValorRadioButton } from "../radio-button.interface";
 
 @Component({
@@ -9,9 +9,14 @@ import { IValorRadioButton } from "../radio-button.interface";
 })
 export class CustomRadioButtonComponent implements OnInit {
   @Input() valores!: IValorRadioButton[];
-  @Input() formControl!: AbstractControl;
+  @Input() valorInicial!: IValorRadioButton;
+  @Input() control!: FormControl;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.valorInicial) {
+      this.control.setValue(this.valorInicial.valor);
+    }
+  }
 }

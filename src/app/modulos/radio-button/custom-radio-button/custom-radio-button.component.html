@@ -1,8 +1,18 @@
-<ng-container *ngFor="let valor of valores; let idx = index">
+<ng-container *ngFor="let valor of valores; let idx = index; let isLast = last">
   <div class="form-check pb-2">
-    <input class="form-check-input" type="radio" name="radio" id="{{ 'radio' + idx }}" [value]="valor.valor">
+    <input
+      class="form-check-input"
+      [ngClass]="{ 'is-invalid': control.errors }"
+      type="radio" name="radio"
+      id="{{ 'radio' + idx }}" [value]="valor.valor"
+      [formControl]="control">
     <label class="form-check-label" for="{{ 'radio' + idx }}">
       {{ valor.etiqueta }}
     </label>
+    <ng-container *ngIf="isLast">
+      <div *ngIf="control.errors" class="invalid-feedback">
+        <div *ngIf="control.errors.required">El campo es requerido</div>
+      </div>
+    </ng-container>
   </div>
 </ng-container>

@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-12">
+    <input
+      type="text"
+      readonly
+      [value]="codigo"
+      class="form-control-plaintext border rounded py-1 px-2 text-end" />
+  </div>
+</div>
+<div class="row px-2">
+  <ng-container *ngTemplateOutlet="boton; context: { data: 'A' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: 'B' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: 'C' }"></ng-container>
+</div>
+<div class="row px-2">
+  <ng-container *ngTemplateOutlet="boton; context: { data: 'D' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: 'E' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: 'F' }"></ng-container>
+</div>
+<div class="row px-2">
+  <ng-container *ngTemplateOutlet="boton; context: { data: '1' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: '2' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: '3' }"></ng-container>
+</div>
+<div class="row px-2">
+  <ng-container *ngTemplateOutlet="boton; context: { data: '4' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: '5' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: '6' }"></ng-container>
+</div>
+<div class="row px-2">
+  <ng-container *ngTemplateOutlet="boton; context: { data: '7' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: '8' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: '9' }"></ng-container>
+</div>
+<div class="row px-2">
+  <ng-container *ngTemplateOutlet="boton; context: { data: '0' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: 'DEL', icon: 'backspace' }"></ng-container>
+  <ng-container *ngTemplateOutlet="boton; context: { data: 'OK', icon: 'check-circle' }"></ng-container>
+</div>
+
+<ng-template #boton let-data="data" let-icon="icon">
+  <div
+    class="col-4 p-2">
+    <div class="d-grid gap-2">
+      <button
+        type="button"
+        class="btn btn-primary"
+        [disabled]="disabled"
+        (click)="handleClickButton(data)">
+        <i *ngIf="icon" class="bi" [ngClass]="'bi-' + icon"></i>
+        <span *ngIf="!icon">{{ data }}</span>
+      </button>
+    </div>
+  </div>
+</ng-template>

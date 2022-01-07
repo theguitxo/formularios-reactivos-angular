@@ -137,3 +137,25 @@
     <app-tabla-datos [control]="inputTextoPattern"></app-tabla-datos>
   </div>
 </div>
+
+<!-- Input text con CVA -->
+<div class="row px-0 border-bottom mb-4">
+  <div class="col-6 pb-3">
+    <app-cva-input-text [formControl]="inputTextoCVA"></app-cva-input-text>
+  </div>
+  <div class="col-6">
+    <app-tabla-datos [control]="inputTextoCVA"></app-tabla-datos>
+    <div  class="pt-2">
+      <button class="btn btn-primary" (click)="codigoAleatorio()" [disabled]="inputTextoCVA.disabled">Introducir código aleatorio</button>
+      <button *ngIf="inputTextoCVA.enabled" class="btn btn-primary ms-2" (click)="deshabilitarControl()">Deshabilitar</button>
+      <button *ngIf="inputTextoCVA.disabled" class="btn btn-primary ms-2" (click)="habilitarControl()">Habilitar</button>
+    </div>
+  </div>
+  <div class="col-12 p-2">
+    <ng-container *ngIf="inputTextoCVA.touched">
+      <div *ngIf="inputTextoCVA.errors!.required" class="alert alert-danger" role="alert">
+        <span><i class="bi bi-exclamation-triangle-fill me-2"></i></span>El campo es requerido
+      </div>
+    </ng-container>
+  </div>
+</div>
