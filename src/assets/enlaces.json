@@ -11,8 +11,8 @@
   },
   {
     "orden": 30,
-    "ruta": "/radio-button",
-    "titulo": "Radio button"
+    "ruta": "/radio-button-checkbox",
+    "titulo": "Radio button / Checkbox"
   },
   {
     "orden": 40,

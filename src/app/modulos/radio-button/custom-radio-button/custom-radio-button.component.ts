@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
-import { IValorRadioButton } from "../radio-button.interface";
+import { IValorRadioButton } from "../radio-button-checkbox.interface";
 
 @Component({
   selector: 'app-custom-radio-button',

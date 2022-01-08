@@ -8,8 +8,8 @@ const routes: Routes = [
     loadChildren: () => import('./modulos/input-text/input-text.module').then(m => m.InputTextModule)
   },
   {
-    path: 'radio-button',
-    loadChildren: () => import('./modulos/radio-button/radio-button.module').then(m => m.RadioButtonModule)
+    path: 'radio-button-checkbox',
+    loadChildren: () => import('./modulos/radio-button/radio-button-checkbox.module').then(m => m.RadioButtonCheckboxModule)
   },
   {
     path: 'selector',
