@@ -1,0 +1,59 @@
+<div class="row px-0 mb-4">
+  <div class="col-6">
+    <form novalidate [formGroup]="formulario">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          [ngClass]="{
+            'is-valid': !controles.nombre.errors && !controles.nombre.pristine,
+            'is-invalid': controles.nombre.errors && !controles.nombre.pristine
+          }"
+          id="nombre"
+          [formControlName]="'nombre'" />
+        <div class="invalid-feedback">
+          <div *ngIf="controles.nombre.errors?.required">El valor es requerido</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail:</label>
+        <input
+          type="email"
+          class="form-control"
+          [ngClass]="{
+            'is-valid': !controles.email.errors && !controles.email.pristine,
+            'is-invalid': controles.email.errors && !controles.email.pristine
+          }"
+          id="email"
+          [formControlName]="'email'" />
+          <div class="invalid-feedback">
+            <div *ngIf="controles.email.errors?.required">El valor es requerido</div>
+            <div *ngIf="controles.email.errors?.email">Se requiere una dirección de e-mail válida</div>
+          </div>
+      </div>
+      <div class="mb-3">
+        <label for="provincia" class="form-label">Provincia:</label>
+        <select
+          class="form-select"
+          [ngClass]="{
+            'is-valid': !controles.provincia.errors && !controles.provincia.pristine,
+            'is-invalid': controles.provincia.errors && !controles.provincia.pristine
+          }"
+          id="provincia"
+          [formControlName]="'provincia'">
+          <option value="">Elija un valor</option>
+          <option *ngFor="let opcion of opcionesProvincias" [value]="opcion.codigo">
+            {{ opcion.provincia }}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <app-selector-idioma [formControlName]="'idioma'"></app-selector-idioma>
+      </div>
+    </form>
+  </div>
+  <div class="col-6">
+    <app-tabla-datos [control]="formulario"></app-tabla-datos>
+  </div>
+</div>

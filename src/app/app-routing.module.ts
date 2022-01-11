@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./modulos/selector/selector.module').then(m => m.SelectorModule)
   },
   {
+    path: 'formulario',
+    loadChildren: () => import('./modulos/formulario/formulario.module').then(m => m.FormularioModule)
+  },
+  {
     path: 'inicio',
     component: InicioComponent,
   },

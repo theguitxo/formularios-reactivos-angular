@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
-import { IValorRadioButton } from "../radio-button-checkbox.interface";
+import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
 
 @Component({
   selector: 'app-radio-button-checkbox',
@@ -9,7 +9,7 @@ import { IValorRadioButton } from "../radio-button-checkbox.interface";
 })
 export class RadioButtonCheckboxComponent implements OnInit {
 
-  valores: IValorRadioButton[] = [
+  valores: IOpcionValorEtiqueta[] = [
     {
       etiqueta: 'valor 1',
       valor: 'valor1'

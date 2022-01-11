@@ -77,13 +77,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/ComunModule.html" data-type="entity-link" >ComunModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-ComunModule-ba00769eb0b2188a84177f16d6fd63fa05a0e5cb4bddadd10aacab3727cb2dc8a8bf2010930e10241f9ff58fcc1070e67d445fcfbe11996c7eb5d5da9081274c"' : 'data-target="#xs-components-links-module-ComunModule-ba00769eb0b2188a84177f16d6fd63fa05a0e5cb4bddadd10aacab3727cb2dc8a8bf2010930e10241f9ff58fcc1070e67d445fcfbe11996c7eb5d5da9081274c"' }>
+                                            'data-target="#components-links-module-ComunModule-9af944db67066968a2465d571a09900e7271df3de8b926bab23008981ffe02fecaf1e4612af4de15c3ca4c8f991fcab611d7a0fd3e08632b1a41047530ecd537"' : 'data-target="#xs-components-links-module-ComunModule-9af944db67066968a2465d571a09900e7271df3de8b926bab23008981ffe02fecaf1e4612af4de15c3ca4c8f991fcab611d7a0fd3e08632b1a41047530ecd537"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ComunModule-ba00769eb0b2188a84177f16d6fd63fa05a0e5cb4bddadd10aacab3727cb2dc8a8bf2010930e10241f9ff58fcc1070e67d445fcfbe11996c7eb5d5da9081274c"' :
-                                            'id="xs-components-links-module-ComunModule-ba00769eb0b2188a84177f16d6fd63fa05a0e5cb4bddadd10aacab3727cb2dc8a8bf2010930e10241f9ff58fcc1070e67d445fcfbe11996c7eb5d5da9081274c"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ComunModule-9af944db67066968a2465d571a09900e7271df3de8b926bab23008981ffe02fecaf1e4612af4de15c3ca4c8f991fcab611d7a0fd3e08632b1a41047530ecd537"' :
+                                            'id="xs-components-links-module-ComunModule-9af944db67066968a2465d571a09900e7271df3de8b926bab23008981ffe02fecaf1e4612af4de15c3ca4c8f991fcab611d7a0fd3e08632b1a41047530ecd537"' }>
                                             <li class="link">
                                                 <a href="components/TablaDatosComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TablaDatosComponent</a>
                                             </li>
@@ -91,16 +91,42 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                             </li>
                             <li class="link">
-                                <a href="modules/InputTextModule.html" data-type="entity-link" >InputTextModule</a>
+                                <a href="modules/FormularioModule.html" data-type="entity-link" >FormularioModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-InputTextModule-0f8c5f86b56e1211f9d049c579746443bc4ba90f7d203390275facfa674b293460984f406953855f60dadf622614a9a6f2cbb0a715448806bd3cf04d2536f2d2"' : 'data-target="#xs-components-links-module-InputTextModule-0f8c5f86b56e1211f9d049c579746443bc4ba90f7d203390275facfa674b293460984f406953855f60dadf622614a9a6f2cbb0a715448806bd3cf04d2536f2d2"' }>
+                                            'data-target="#components-links-module-FormularioModule-50969a0bc51db07ca59593d8912a82caed9e94747eb75c2caefc656f8b1fbcd73fc2faa5220bcf52cf6c35c66c3c525ab13111461dde31905b62fefc039a8fe9"' : 'data-target="#xs-components-links-module-FormularioModule-50969a0bc51db07ca59593d8912a82caed9e94747eb75c2caefc656f8b1fbcd73fc2faa5220bcf52cf6c35c66c3c525ab13111461dde31905b62fefc039a8fe9"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-InputTextModule-0f8c5f86b56e1211f9d049c579746443bc4ba90f7d203390275facfa674b293460984f406953855f60dadf622614a9a6f2cbb0a715448806bd3cf04d2536f2d2"' :
-                                            'id="xs-components-links-module-InputTextModule-0f8c5f86b56e1211f9d049c579746443bc4ba90f7d203390275facfa674b293460984f406953855f60dadf622614a9a6f2cbb0a715448806bd3cf04d2536f2d2"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-FormularioModule-50969a0bc51db07ca59593d8912a82caed9e94747eb75c2caefc656f8b1fbcd73fc2faa5220bcf52cf6c35c66c3c525ab13111461dde31905b62fefc039a8fe9"' :
+                                            'id="xs-components-links-module-FormularioModule-50969a0bc51db07ca59593d8912a82caed9e94747eb75c2caefc656f8b1fbcd73fc2faa5220bcf52cf6c35c66c3c525ab13111461dde31905b62fefc039a8fe9"' }>
+                                            <li class="link">
+                                                <a href="components/FormularioComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >FormularioComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/SelectorIdiomaComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >SelectorIdiomaComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/FormularioRoutingModule.html" data-type="entity-link" >FormularioRoutingModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/InputTextModule.html" data-type="entity-link" >InputTextModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-InputTextModule-1bc96f19d95e206daf8c058ae9cb32c89b9ca49acee224304d96d2e2de0ef2bb466cdd8b39d3fb4818e8eb6717d7cd724433e2e0947f045ee99126a037ee9e50"' : 'data-target="#xs-components-links-module-InputTextModule-1bc96f19d95e206daf8c058ae9cb32c89b9ca49acee224304d96d2e2de0ef2bb466cdd8b39d3fb4818e8eb6717d7cd724433e2e0947f045ee99126a037ee9e50"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-InputTextModule-1bc96f19d95e206daf8c058ae9cb32c89b9ca49acee224304d96d2e2de0ef2bb466cdd8b39d3fb4818e8eb6717d7cd724433e2e0947f045ee99126a037ee9e50"' :
+                                            'id="xs-components-links-module-InputTextModule-1bc96f19d95e206daf8c058ae9cb32c89b9ca49acee224304d96d2e2de0ef2bb466cdd8b39d3fb4818e8eb6717d7cd724433e2e0947f045ee99126a037ee9e50"' }>
+                                            <li class="link">
+                                                <a href="components/CVAInputTextComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CVAInputTextComponent</a>
+                                            </li>
                                             <li class="link">
                                                 <a href="components/InputTextComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >InputTextComponent</a>
                                             </li>
@@ -111,36 +137,42 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/InputTextRoutingModule.html" data-type="entity-link" >InputTextRoutingModule</a>
                             </li>
                             <li class="link">
-                                <a href="modules/RadioButtonModule.html" data-type="entity-link" >RadioButtonModule</a>
+                                <a href="modules/RadioButtonCheckboxModule.html" data-type="entity-link" >RadioButtonCheckboxModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-RadioButtonModule-3d735a301cca456eaecb4cdc41e2211fac5ec49589b97dabcb0980c52d658e72fc09f1c5a78638079c913043c2147da7a2588ee5869373e3ca7f14bb7ded2756"' : 'data-target="#xs-components-links-module-RadioButtonModule-3d735a301cca456eaecb4cdc41e2211fac5ec49589b97dabcb0980c52d658e72fc09f1c5a78638079c913043c2147da7a2588ee5869373e3ca7f14bb7ded2756"' }>
+                                            'data-target="#components-links-module-RadioButtonCheckboxModule-297d1edc26316c40d7c92631a9ec85351905fa84bd13b25b6202985576fa70316109ba97c4c116123d2ef3b61fdae578cc9cb1a8262a5a9190efdfed38475a6a"' : 'data-target="#xs-components-links-module-RadioButtonCheckboxModule-297d1edc26316c40d7c92631a9ec85351905fa84bd13b25b6202985576fa70316109ba97c4c116123d2ef3b61fdae578cc9cb1a8262a5a9190efdfed38475a6a"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-RadioButtonModule-3d735a301cca456eaecb4cdc41e2211fac5ec49589b97dabcb0980c52d658e72fc09f1c5a78638079c913043c2147da7a2588ee5869373e3ca7f14bb7ded2756"' :
-                                            'id="xs-components-links-module-RadioButtonModule-3d735a301cca456eaecb4cdc41e2211fac5ec49589b97dabcb0980c52d658e72fc09f1c5a78638079c913043c2147da7a2588ee5869373e3ca7f14bb7ded2756"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-RadioButtonCheckboxModule-297d1edc26316c40d7c92631a9ec85351905fa84bd13b25b6202985576fa70316109ba97c4c116123d2ef3b61fdae578cc9cb1a8262a5a9190efdfed38475a6a"' :
+                                            'id="xs-components-links-module-RadioButtonCheckboxModule-297d1edc26316c40d7c92631a9ec85351905fa84bd13b25b6202985576fa70316109ba97c4c116123d2ef3b61fdae578cc9cb1a8262a5a9190efdfed38475a6a"' }>
                                             <li class="link">
-                                                <a href="components/RadioButtonComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RadioButtonComponent</a>
+                                                <a href="components/CustomRadioButtonComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CustomRadioButtonComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/RadioButtonCheckboxComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RadioButtonCheckboxComponent</a>
                                             </li>
                                         </ul>
                                     </li>
                             </li>
                             <li class="link">
-                                <a href="modules/RadioButtonRoutingModule.html" data-type="entity-link" >RadioButtonRoutingModule</a>
+                                <a href="modules/RadioButtonCheckboxRoutingModule.html" data-type="entity-link" >RadioButtonCheckboxRoutingModule</a>
                             </li>
                             <li class="link">
                                 <a href="modules/SelectorModule.html" data-type="entity-link" >SelectorModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-SelectorModule-f266df64fb7bc2ac06fa09880dc328f8c140525c7063880a20627fa8098635adf6d34169bc4f8b9726a601efae36dca6c1598a4b91261c1237e41f6c6e732602"' : 'data-target="#xs-components-links-module-SelectorModule-f266df64fb7bc2ac06fa09880dc328f8c140525c7063880a20627fa8098635adf6d34169bc4f8b9726a601efae36dca6c1598a4b91261c1237e41f6c6e732602"' }>
+                                            'data-target="#components-links-module-SelectorModule-bc4ca43e325f8747089a804b678010638e4cd53b5abea6eb4c41d0ab5004a0c81bf1dc1a4d7bcfdfe09f49ddc09b9bb61f01de3913f0c94ff0ce3c46317e8710"' : 'data-target="#xs-components-links-module-SelectorModule-bc4ca43e325f8747089a804b678010638e4cd53b5abea6eb4c41d0ab5004a0c81bf1dc1a4d7bcfdfe09f49ddc09b9bb61f01de3913f0c94ff0ce3c46317e8710"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SelectorModule-f266df64fb7bc2ac06fa09880dc328f8c140525c7063880a20627fa8098635adf6d34169bc4f8b9726a601efae36dca6c1598a4b91261c1237e41f6c6e732602"' :
-                                            'id="xs-components-links-module-SelectorModule-f266df64fb7bc2ac06fa09880dc328f8c140525c7063880a20627fa8098635adf6d34169bc4f8b9726a601efae36dca6c1598a4b91261c1237e41f6c6e732602"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SelectorModule-bc4ca43e325f8747089a804b678010638e4cd53b5abea6eb4c41d0ab5004a0c81bf1dc1a4d7bcfdfe09f49ddc09b9bb61f01de3913f0c94ff0ce3c46317e8710"' :
+                                            'id="xs-components-links-module-SelectorModule-bc4ca43e325f8747089a804b678010638e4cd53b5abea6eb4c41d0ab5004a0c81bf1dc1a4d7bcfdfe09f49ddc09b9bb61f01de3913f0c94ff0ce3c46317e8710"' }>
+                                            <li class="link">
+                                                <a href="components/CVASelectorComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CVASelectorComponent</a>
+                                            </li>
                                             <li class="link">
                                                 <a href="components/SelectorComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >SelectorComponent</a>
                                             </li>
@@ -161,19 +193,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
-                                <a href="components/Prueba1Component.html" data-type="entity-link" >Prueba1Component</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/Prueba2Component.html" data-type="entity-link" >Prueba2Component</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/Prueba3Component.html" data-type="entity-link" >Prueba3Component</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/Prueba4Component.html" data-type="entity-link" >Prueba4Component</a>
-                            </li>
-                            <li class="link">
-                                <a href="components/Prueba5Component.html" data-type="entity-link" >Prueba5Component</a>
+                                <a href="components/CVARadioButtonComponent.html" data-type="entity-link" >CVARadioButtonComponent</a>
                             </li>
                         </ul>
                     </li>
@@ -200,6 +220,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
                                 <a href="interfaces/IEnlace.html" data-type="entity-link" >IEnlace</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IIconoIdioma.html" data-type="entity-link" >IIconoIdioma</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IOpcionProvincia.html" data-type="entity-link" >IOpcionProvincia</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IOpcionValorEtiqueta.html" data-type="entity-link" >IOpcionValorEtiqueta</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ITarjeta.html" data-type="entity-link" >ITarjeta</a>

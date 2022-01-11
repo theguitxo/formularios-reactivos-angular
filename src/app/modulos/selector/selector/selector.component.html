@@ -1,1 +1,17 @@
-<div>selector component</div>
+<div class="row px-0 mb-4">
+  <div class="col-6">
+    <app-cva-selector
+      [formControl]="selectorCVA"
+      [opciones]="opciones"
+      [valorInicial]="'valor2'">
+    </app-cva-selector>
+  </div>
+  <div class="col-6">
+    <app-tabla-datos [control]="selectorCVA"></app-tabla-datos>
+    <div  class="py-2">
+      <button class="btn btn-primary me-2" (click)="setValue('valor1')">Seleccionar Opcion 1</button>
+      <button class="btn btn-primary me-2" (click)="setValue('valor2')">Seleccionar Opcion 2</button>
+      <button class="btn btn-primary me-2" (click)="setValue('valor3')">Seleccionar Opcion 3</button>
+    </div>
+  </div>
+</div>

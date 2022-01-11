@@ -82,12 +82,16 @@ const routes: Routes &#x3D; [
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modulos/input-text/input-text.module&#x27;).then(m &#x3D;&gt; m.InputTextModule)&quot;
   },
   {
-    path: &#x27;radio-button&#x27;,
-    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modulos/radio-button/radio-button.module&#x27;).then(m &#x3D;&gt; m.RadioButtonModule)&quot;
+    path: &#x27;radio-button-checkbox&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modulos/radio-button/radio-button-checkbox.module&#x27;).then(m &#x3D;&gt; m.RadioButtonCheckboxModule)&quot;
   },
   {
     path: &#x27;selector&#x27;,
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modulos/selector/selector.module&#x27;).then(m &#x3D;&gt; m.SelectorModule)&quot;
+  },
+  {
+    path: &#x27;formulario&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modulos/formulario/formulario.module&#x27;).then(m &#x3D;&gt; m.FormularioModule)&quot;
   },
   {
     path: &#x27;inicio&#x27;,

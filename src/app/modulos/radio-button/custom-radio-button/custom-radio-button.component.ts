@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
-import { IValorRadioButton } from "../radio-button-checkbox.interface";
+import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
 
 @Component({
   selector: 'app-custom-radio-button',
@@ -8,8 +8,8 @@ import { IValorRadioButton } from "../radio-button-checkbox.interface";
   styleUrls: ['./custom-radio-button.component.scss']
 })
 export class CustomRadioButtonComponent implements OnInit {
-  @Input() valores!: IValorRadioButton[];
-  @Input() valorInicial!: IValorRadioButton;
+  @Input() valores!: IOpcionValorEtiqueta[];
+  @Input() valorInicial!: IOpcionValorEtiqueta;
   @Input() control!: FormControl;
 
   constructor() {}

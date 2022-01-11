@@ -125,6 +125,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#valueIsString" >valueIsString</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -174,7 +188,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/comun/tabla-datos/tabla-datos.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/comun/tabla-datos/tabla-datos.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -234,8 +248,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/comun/tabla-datos/tabla-datos.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/comun/tabla-datos/tabla-datos.component.ts:15</a></div>
                 </td>
             </tr>
 
@@ -249,6 +263,38 @@
                     </div>
                 </td>
             </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="valueIsString"></a>
+                    <span class="name">
+                        <span ><b>valueIsString</b></span>
+                        <a href="#valueIsString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/comun/tabla-datos/tabla-datos.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
         </tbody>
     </table>
 </section>
@@ -268,41 +314,41 @@ import { AbstractControl } from &quot;@angular/forms&quot;;
 export class TablaDatosComponent implements OnInit {
   @Input() control!: AbstractControl;
 
+  valueIsString!: boolean;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.valueIsString &#x3D; (typeof this.control.value &#x3D;&#x3D;&#x3D; &#x27;string&#x27;);
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;table class&#x3D;&quot;table table-success table-striped&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Nombre&lt;/th&gt;
-      &lt;th&gt;Valor&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;PRISTINE&lt;/td&gt;
+      &lt;th class&#x3D;&quot;w-25&quot;&gt;PRISTINE&lt;/th&gt;
       &lt;td&gt;{{ control.pristine }}&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;TOUCHED&lt;/td&gt;
+      &lt;th class&#x3D;&quot;w-25&quot;&gt;TOUCHED&lt;/th&gt;
       &lt;td&gt;{{ control.touched }}&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;VALUE&lt;/td&gt;
-      &lt;td&gt;{{ control.value }}&lt;/td&gt;
+      &lt;th class&#x3D;&quot;w-25&quot;&gt;VALUE&lt;/th&gt;
+      &lt;td *ngIf&#x3D;&quot;valueIsString&quot;&gt;{{ control.value }}&lt;/td&gt;
+      &lt;td *ngIf&#x3D;&quot;!valueIsString&quot;&gt;{{ control.value | json }}&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;STATE&lt;/td&gt;
+      &lt;th class&#x3D;&quot;w-25&quot;&gt;STATE&lt;/th&gt;
       &lt;td&gt;{{ control.status }}&lt;/td&gt;
     &lt;/tr&gt;
-    &lt;tr *ngIf&#x3D;&quot;control.errors&quot;&gt;
-      &lt;td&gt;ERRORS&lt;/td&gt;
-      &lt;td&gt;{{ control.errors }}&lt;/td&gt;
+    &lt;tr&gt;
+      &lt;th class&#x3D;&quot;w-25&quot;&gt;ERRORS&lt;/th&gt;
+      &lt;td&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;control.errors&quot;&gt;{{ control.errors | json }}&lt;/ng-container&gt;
+      &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -341,8 +387,8 @@ export class TablaDatosComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><table class="table table-success table-striped">  <thead>    <tr>      <th>Nombre</th>      <th>Valor</th>    </tr>  </thead>  <tbody>    <tr>      <td>PRISTINE</td>      <td>{{ control.pristine }}</td>    </tr>    <tr>      <td>TOUCHED</td>      <td>{{ control.touched }}</td>    </tr>    <tr>      <td>VALUE</td>      <td>{{ control.value }}</td>    </tr>    <tr>      <td>STATE</td>      <td>{{ control.status }}</td>    </tr>    <tr *ngIf="control.errors">      <td>ERRORS</td>      <td>{{ control.errors }}</td>    </tr>  </tbody></table></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'Prueba1Component', 'selector': 'app-prueba1'},{'name': 'Prueba2Component', 'selector': 'app-prueba2'},{'name': 'Prueba3Component', 'selector': 'app-prueba3'},{'name': 'Prueba4Component', 'selector': 'app-prueba4'},{'name': 'Prueba5Component', 'selector': 'app-prueba5'},{'name': 'RadioButtonComponent', 'selector': 'app-radio-button'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'TablaDatosComponent', 'selector': 'app-tabla-datos'}];
+        var COMPONENT_TEMPLATE = '<div><table class="table table-success table-striped">  <tbody>    <tr>      <th class="w-25">PRISTINE</th>      <td>{{ control.pristine }}</td>    </tr>    <tr>      <th class="w-25">TOUCHED</th>      <td>{{ control.touched }}</td>    </tr>    <tr>      <th class="w-25">VALUE</th>      <td *ngIf="valueIsString">{{ control.value }}</td>      <td *ngIf="!valueIsString">{{ control.value | json }}</td>    </tr>    <tr>      <th class="w-25">STATE</th>      <td>{{ control.status }}</td>    </tr>    <tr>      <th class="w-25">ERRORS</th>      <td>        <ng-container *ngIf="control.errors">{{ control.errors | json }}</ng-container>      </td>    </tr>  </tbody></table></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomRadioButtonComponent', 'selector': 'app-custom-radio-button'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'SelectorIdiomaComponent', 'selector': 'app-selector-idioma'},{'name': 'TablaDatosComponent', 'selector': 'app-tabla-datos'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TablaDatosComponent'};
 </script>

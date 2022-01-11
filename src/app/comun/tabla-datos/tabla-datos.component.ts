@@ -9,7 +9,10 @@ import { AbstractControl } from "@angular/forms";
 export class TablaDatosComponent implements OnInit {
   @Input() control!: AbstractControl;
 
+  valueIsString!: boolean;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.valueIsString = (typeof this.control.value === 'string');
+  }
 }

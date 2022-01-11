@@ -10,7 +10,8 @@
     </tr>
     <tr>
       <th class="w-25">VALUE</th>
-      <td>{{ control.value }}</td>
+      <td *ngIf="valueIsString">{{ control.value }}</td>
+      <td *ngIf="!valueIsString">{{ control.value | json }}</td>
     </tr>
     <tr>
       <th class="w-25">STATE</th>

@@ -1,0 +1,13 @@
+<select
+  class="form-select"
+  [ngClass]="{ 'is-invalid': (_control.errors && !_control.pristine) }"
+  (change)="handleSelectorChange($event)">
+  <option value="">Seleccione un valor</option>
+  <option
+    *ngFor="let opcion of opciones"
+    [value]="opcion.valor"
+    [selected]="(opcion.valor === selected)">
+    {{ opcion.etiqueta }}
+  </option>
+</select>
+<div class="invalid-feedback">El campo es requerido</div>
