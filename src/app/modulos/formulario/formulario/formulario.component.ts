@@ -1,7 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { IOpcionProvincia } from "src/app/comun/comun.interface";
+import { SwalComponent } from "@sweetalert2/ngx-sweetalert2";
+import { IIconoIdioma, IOpcionProvincia } from "src/app/comun/comun.interface";
 import { Utils } from "src/app/comun/utils.class";
+import { SweetAlertOptions } from "sweetalert2";
 import * as listaProvincias from '../../../../assets/provincias.json';
 
 @Component({
@@ -10,9 +12,12 @@ import * as listaProvincias from '../../../../assets/provincias.json';
   styleUrls: ['./formulario.component.scss']
 })
 export class FormularioComponent implements OnInit {
+  @ViewChild('confirmationSwal') public readonly confirmationSwal!: SwalComponent;
 
   formulario!: FormGroup;
   opcionesProvincias!: IOpcionProvincia[];
+  opcionesPopUp!: SweetAlertOptions;
+  idiomaSeleccionado!: IIconoIdioma;
 
   constructor(
     private readonly fb: FormBuilder
@@ -29,8 +34,28 @@ export class FormularioComponent implements OnInit {
       nombre: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       provincia: new FormControl('', [Validators.required]),
-      idioma: new FormControl('', Validators.required)
+      idioma: new FormControl('', Validators.required),
+      terminosCondiciones: new FormControl(false, Validators.requiredTrue)
     });
+
+    this.opcionesPopUp = {
+      confirmButtonColor: '#0d6efd',
+      confirmButtonText: 'Aceptar'
+    };
   }
 
+  handleReset(): void {
+    this.formulario.reset();
+  }
+
+  handleEnviar(): void {
+    const provincia = this.opcionesProvincias.find(prov => prov.codigo === this.controles.provincia.value)?.provincia;
+    this.confirmationSwal.title = `${this.controles.nombre.value} (${this.controles.email.value})`;
+    this.confirmationSwal.text = `${provincia} - ${this.idiomaSeleccionado.nombre}`;
+    this.confirmationSwal.fire();
+  }
+
+  cambiaIdioma(idioma: IIconoIdioma): void {
+    this.idiomaSeleccionado = idioma;
+  }
 }

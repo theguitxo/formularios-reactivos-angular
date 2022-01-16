@@ -1,4 +1,4 @@
-import { Component, forwardRef, OnInit } from "@angular/core";
+import { Component, EventEmitter, forwardRef, OnInit, Output } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { IIconoIdioma } from "src/app/comun/comun.interface";
 
@@ -15,6 +15,8 @@ import { IIconoIdioma } from "src/app/comun/comun.interface";
   ]
 })
 export class SelectorIdiomaComponent implements ControlValueAccessor, OnInit {
+  @Output() cambiarIdioma: EventEmitter<IIconoIdioma> = new EventEmitter();
+
   private onTouched!: Function;
   private onChanged!: Function;
 
@@ -50,15 +52,22 @@ export class SelectorIdiomaComponent implements ControlValueAccessor, OnInit {
     this.onTouched = fn;
   }
 
-  writeValue(obj: any): void {}
+  writeValue(value: string): void {
+    this.seleccionarIdioma(value);
+  }
 
   handleClickIdioma(idioma: string): void {
+    this.seleccionarIdioma(idioma);
+    this.onTouched();
+    this.onChanged(idioma);
+  }
+
+  seleccionarIdioma(idioma: string): void {
     this.idiomas.map(i => i.seleccionado = false);
     const item = this.idiomas.find(i => i.idioma === idioma);
     if (item) {
       item.seleccionado = true;
+      this.cambiarIdioma.emit(item);
     }
-    this.onTouched();
-    this.onChanged(idioma);
   }
 }

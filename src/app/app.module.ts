@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InicioComponent } from './componentes/inicio/inicio.component';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -14,10 +13,9 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SweetAlert2Module.forRoot()
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -49,11 +49,71 @@
         </select>
       </div>
       <div class="mb-3">
-        <app-selector-idioma [formControlName]="'idioma'"></app-selector-idioma>
+        <app-selector-idioma
+          [formControlName]="'idioma'"
+          [ngClass]="{
+            'is-valid': !controles.idioma.errors,
+            'is-invalid': controles.idioma.errors
+          }"
+          (cambiarIdioma)="cambiaIdioma($event)">
+        </app-selector-idioma>
+        <div class="invalid-feedback">
+          <div *ngIf="controles.idioma.errors?.required">El idioma es requerido</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <input
+          class="form-check-input me-2"
+          [ngClass]="{
+            'is-valid': !controles.terminosCondiciones.errors && !controles.terminosCondiciones.pristine,
+            'is-invalid': controles.terminosCondiciones.errors && !controles.terminosCondiciones.pristine
+          }"
+          type="checkbox"
+          [formControlName]="'terminosCondiciones'"
+          id="terminosCondiciones">
+        <label class="form-check-label" for="terminosCondiciones">Aceptar términos y condiciones</label>
+        <div class="invalid-feedback">
+          <div *ngIf="controles.terminosCondiciones.errors?.required">Se han de aceptar los términos y condiciones</div>
+        </div>
+      </div>
+      <div class="mb-3 text-end">
+        <button
+          type="button"
+          class="btn btn-primary ms-2"
+          [disabled]="!formulario.valid"
+          (click)="handleEnviar()">
+          Enviar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary ms-2"
+          [disabled]="formulario.pristine"
+          (click)="handleReset()">
+          Reset
+        </button>
       </div>
     </form>
   </div>
   <div class="col-6">
+    <div>Formulario:</div>
     <app-tabla-datos [control]="formulario"></app-tabla-datos>
+    <div>Nombre:</div>
+    <app-tabla-datos [control]="controles.nombre"></app-tabla-datos>
+    <div>Email:</div>
+    <app-tabla-datos [control]="controles.email"></app-tabla-datos>
+    <div>Provincia:</div>
+    <app-tabla-datos [control]="controles.provincia"></app-tabla-datos>
+    <div>Idioma:</div>
+    <app-tabla-datos [control]="controles.idioma"></app-tabla-datos>
+    <div>Términos y condiciones</div>
+    <app-tabla-datos [control]="controles.terminosCondiciones"></app-tabla-datos>
   </div>
 </div>
+
+<swal
+  #confirmationSwal
+  icon="info"
+  [title]="''"
+  [text]="''"
+  [swalOptions]="opcionesPopUp">
+</swal>

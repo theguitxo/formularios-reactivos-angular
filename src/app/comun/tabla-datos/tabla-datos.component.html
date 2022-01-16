@@ -10,14 +10,14 @@
     </tr>
     <tr>
       <th class="w-25">VALUE</th>
-      <td *ngIf="valueIsString">{{ control.value }}</td>
-      <td *ngIf="!valueIsString">{{ control.value | json }}</td>
+      <td *ngIf="!valueIsObject">{{ control.value }}</td>
+      <td *ngIf="valueIsObject">{{ control.value | json }}</td>
     </tr>
     <tr>
       <th class="w-25">STATE</th>
       <td>{{ control.status }}</td>
     </tr>
-    <tr>
+    <tr *ngIf="!valueIsObject">
       <th class="w-25">ERRORS</th>
       <td>
         <ng-container *ngIf="control.errors">{{ control.errors | json }}</ng-container>
