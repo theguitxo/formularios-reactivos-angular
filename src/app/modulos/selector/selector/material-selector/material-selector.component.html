@@ -1,0 +1,10 @@
+<mat-form-field>
+  <mat-label>Provincia</mat-label>
+  <mat-select
+    [value]="selected"
+    (selectionChange)="handleSelectionChange($event)">
+    <mat-option *ngFor="let opcion of opciones" [value]="opcion.valor">
+      {{ opcion.etiqueta }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
