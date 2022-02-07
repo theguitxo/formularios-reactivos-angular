@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-8">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        id="inputTextMinMaxLength"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': (inputTextMinMaxLength.errors && !inputTextMinMaxLength.pristine),
+          'is-valid': (!inputTextMinMaxLength.errors && !inputTextMinMaxLength.pristine)
+        }"
+        placeholder="Input de texto con mínimo y máximo de largo de cadena"
+        [formControl]="inputTextMinMaxLength" />
+      <label for="inputTextMinMaxLength">Input de texto con mínimo y máximo de largo de cadena</label>
+      <div *ngIf="inputTextMinMaxLength.errors && !inputTextMinMaxLength.pristine" class="invalid-feedback">
+        <div *ngIf="inputTextMinMaxLength.errors.minlength">
+          Se requieren un mínimo de {{ inputTextMinMaxLength.errors.minlength.requiredLength }} (la cadena contiene {{ inputTextMinMaxLength.errors.minlength.actualLength }})
+        </div>
+        <div *ngIf="inputTextMinMaxLength.errors.maxlength">
+          No se pueden superar los {{ inputTextMinMaxLength.errors.maxlength.requiredLength }} caracteres (la cadena contiene {{ inputTextMinMaxLength.errors.maxlength.actualLength }})
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <app-tabla-datos [control]="inputTextMinMaxLength"></app-tabla-datos>
+  </div>
+</div>

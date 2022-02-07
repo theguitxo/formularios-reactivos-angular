@@ -1,0 +1,14 @@
+<div
+  *ngFor="let opcion of opciones; let idx = index"
+  class="form-check">
+  <input
+    type="radio"
+    [name]="nombreRadio"
+    [id]="'checkbox' + idx"
+    class="form-check-input"
+    [value]="opcion.valor"
+    [disabled]="_control.disabled"
+    [checked]="selected === opcion.valor"
+    (change)="handleRadioButtonChange($event)">
+  <label class="form-check-label" [for]="'checkbox' + idx">{{ opcion.etiqueta }}</label>
+</div>

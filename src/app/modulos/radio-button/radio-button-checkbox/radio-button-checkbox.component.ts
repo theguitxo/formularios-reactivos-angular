@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
+import { Subscription } from "rxjs";
 import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
 
 @Component({
@@ -7,7 +8,8 @@ import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
   templateUrl: './radio-button-checkbox.component.html',
   styleUrls: ['./radio-button-checkbox.component.scss']
 })
-export class RadioButtonCheckboxComponent implements OnInit {
+export class RadioButtonCheckboxComponent implements OnInit, OnDestroy {
+  subscription: Subscription = new Subscription();
 
   valores: IOpcionValorEtiqueta[] = [
     {
@@ -26,12 +28,20 @@ export class RadioButtonCheckboxComponent implements OnInit {
 
   inputRadioRequerido!: FormControl;
 
+  inputRadioCVA!: FormControl;
+  inputRadioCVASeleccionado!: string;
+
   constructor(
     private readonly fb: FormBuilder,
   ) {}
 
   ngOnInit(): void {
     this.buildInputRadioRequerido();
+    this.buildInputRadioCVA();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   buildInputRadioRequerido(): void {
@@ -39,5 +49,26 @@ export class RadioButtonCheckboxComponent implements OnInit {
       value: null,
       disabled: false
     }, Validators.required);
+  }
+
+  buildInputRadioCVA(): void {
+    this.inputRadioCVA = this.fb.control({
+      value: '',
+      disabled: false
+    });
+
+    this.subscription.add(
+      this.inputRadioCVA.valueChanges.subscribe(
+        (valor: string) => this.inputRadioCVASeleccionado = valor
+      )
+    );
+  }
+
+  enableRadio(): void {
+    this.inputRadioCVA.enable();
+  }
+
+  disableRadio(): void {
+    this.inputRadioCVA.disable();
   }
 }

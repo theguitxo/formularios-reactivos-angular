@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-8">
+    <div class="form-floating mb-3">
+      <input
+        type="email"
+        id="inputTextEmail"
+        class="form-control"
+        [ngClass]="{
+          'is-invalid': (inputTextEmail.errors && !inputTextEmail.pristine),
+          'is-valid': (!inputTextEmail.errors && !inputTextEmail.pristine)
+        }"
+        placeholder="Input de texto formato de e-mail válido"
+        [formControl]="inputTextEmail" />
+      <label for="inputTextEmail">Input de texto formato de e-mail válido</label>
+      <div *ngIf="inputTextEmail.errors && !inputTextEmail.pristine" class="invalid-feedback">
+        <div *ngIf="inputTextEmail.errors.email">Se requiere un formato de e-mail válidos</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <app-tabla-datos [control]="inputTextEmail"></app-tabla-datos>
+  </div>
+</div>

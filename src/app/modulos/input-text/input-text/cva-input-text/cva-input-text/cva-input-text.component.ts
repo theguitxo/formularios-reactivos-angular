@@ -4,7 +4,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 @Component({
   selector: 'app-cva-input-text',
   templateUrl: './cva-input-text.component.html',
-  styleUrls: ['./cva-input-text.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

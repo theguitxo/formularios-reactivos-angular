@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-8">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        id="inputText"
+        class="form-control"
+        placeholder="Input de texto"
+        [formControl]="inputText" />
+      <label for="inputText">Input de texto</label>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <app-tabla-datos [control]="inputText"></app-tabla-datos>
+  </div>
+</div>
