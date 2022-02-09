@@ -98,7 +98,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
 import { FormBuilder, FormControl, Validators } from &quot;@angular/forms&quot;;
 import { MatRadioChange } from &quot;@angular/material/radio&quot;;
-import { IOpcionProvincia, IOpcionValorEtiqueta } from &quot;src/app/comun/comun.interface&quot;;
+import { IOptionState, IOptionValueLabel } from &quot;src/app/comun/shared.interface.&quot;;
 import { Utils } from &quot;src/app/comun/utils.class&quot;;
 import * as listaProvincias from &#x27;../../../../assets/provincias.json&#x27;;
 
@@ -122,23 +122,23 @@ interface IRadioButtonTipoEjemplo {
   styleUrls: [&#x27;./selector.component.scss&#x27;]
 })
 export class SelectorComponent implements OnInit {
-  opciones: IOpcionValorEtiqueta[] &#x3D; [
+  opciones: IOptionValueLabel[] &#x3D; [
     {
-      etiqueta: &#x27;Opción 1&#x27;,
-      valor: &#x27;valor1&#x27;
+      label: &#x27;Opción 1&#x27;,
+      value: &#x27;valor1&#x27;
     },
     {
-      etiqueta: &#x27;Opción 2&#x27;,
-      valor: &#x27;valor2&#x27;
+      label: &#x27;Opción 2&#x27;,
+      value: &#x27;valor2&#x27;
     },
     {
-      etiqueta: &#x27;Opción 3&#x27;,
-      valor: &#x27;valor3&#x27;
+      label: &#x27;Opción 3&#x27;,
+      value: &#x27;valor3&#x27;
     }
   ];
   selectorCVA!: FormControl;
 
-  opcionesProvincias!: IOpcionValorEtiqueta[];
+  opcionesProvincias!: IOptionValueLabel[];
   provincia!: string;
   listaProvincias: IListaProvincias &#x3D; {};
   selectorProvinciasCVA!: FormControl;
@@ -170,11 +170,12 @@ export class SelectorComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.opcionesProvincias &#x3D; Utils.getJSONDefault(listaProvincias).map((item: IOpcionProvincia) &#x3D;&gt; {
-      this.listaProvincias[item.codigo] &#x3D; item.provincia;
+    this.opcionesProvincias &#x3D; Utils.getJSONDefault(listaProvincias).map((item: IOptionState
+      ) &#x3D;&gt; {
+      this.listaProvincias[item.code] &#x3D; item.state;
       return {
-        valor: item.codigo,
-        etiqueta: item.provincia
+        value: item.code,
+        label: item.state
       }
     });
     this.buildSelectorCVA();

@@ -3,10 +3,10 @@
   <ul>
     <li
       *ngFor="let item of idiomas"
-      [class.seleccionado]="item.seleccionado"
-      [title]="item.nombre"
-      (click)="handleClickIdioma(item.idioma)">
-      <img [src]="'assets/banderas/' +  item.idioma + '.png'" />
+      [class.seleccionado]="item.selected"
+      [title]="item.name"
+      (click)="handleClickIdioma(item.lang)">
+      <img [src]="'assets/banderas/' +  item.lang + '.png'" />
     </li>
   </ul>
 </div>

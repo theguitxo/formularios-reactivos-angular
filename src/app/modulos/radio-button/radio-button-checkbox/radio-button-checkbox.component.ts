@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { Subscription } from "rxjs";
-import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
+import { IOptionValueLabel } from "src/app/comun/shared.interface.";
 
 @Component({
   selector: 'app-radio-button-checkbox',
@@ -11,18 +11,18 @@ import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
 export class RadioButtonCheckboxComponent implements OnInit, OnDestroy {
   subscription: Subscription = new Subscription();
 
-  valores: IOpcionValorEtiqueta[] = [
+  valores: IOptionValueLabel[] = [
     {
-      etiqueta: 'valor 1',
-      valor: 'valor1'
+      label: 'valor 1',
+      value: 'valor1'
     },
     {
-      etiqueta: 'valor 2',
-      valor: 'valor2'
+      label: 'valor 2',
+      value: 'valor2'
     },
     {
-      etiqueta: 'valor 3',
-      valor: 'valor3'
+      label: 'valor 3',
+      value: 'valor3'
     }
   ];
 

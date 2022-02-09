@@ -6,9 +6,9 @@
     [name]="nombreRadio"
     [id]="'checkbox' + idx"
     class="form-check-input"
-    [value]="opcion.valor"
+    [value]="opcion.value"
     [disabled]="_control.disabled"
-    [checked]="selected === opcion.valor"
+    [checked]="selected === opcion.value"
     (change)="handleRadioButtonChange($event)">
-  <label class="form-check-label" [for]="'checkbox' + idx">{{ opcion.etiqueta }}</label>
+  <label class="form-check-label" [for]="'checkbox' + idx">{{ opcion.label }}</label>
 </div>

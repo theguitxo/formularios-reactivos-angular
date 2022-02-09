@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { MatSelectChange } from "@angular/material/select";
-import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
-
+import { IOptionValueLabel } from "src/app/comun/shared.interface.";
 
 @Component({
   selector: 'app-material-selector',
@@ -18,7 +17,7 @@ import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
   ]
 })
 export class MaterialSelectorComponent implements ControlValueAccessor, OnInit, OnChanges {
-  @Input() opciones! : IOpcionValorEtiqueta[];
+  @Input() opciones! : IOptionValueLabel[];
   @Input() value!: string;
 
   @Output() onChange: EventEmitter<string> = new EventEmitter();
@@ -34,7 +33,7 @@ export class MaterialSelectorComponent implements ControlValueAccessor, OnInit, 
     this.checkValorPorDefecto();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     this.checkValorPorDefecto();
   }
 

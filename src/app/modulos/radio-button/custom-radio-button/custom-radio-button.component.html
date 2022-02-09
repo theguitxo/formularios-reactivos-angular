@@ -4,10 +4,10 @@
       class="form-check-input"
       [ngClass]="{ 'is-invalid': control.errors }"
       type="radio" name="radio"
-      id="{{ 'radio' + idx }}" [value]="valor.valor"
+      id="{{ 'radio' + idx }}" [value]="valor.value"
       [formControl]="control">
     <label class="form-check-label" for="{{ 'radio' + idx }}">
-      {{ valor.etiqueta }}
+      {{ valor.label }}
     </label>
     <ng-container *ngIf="isLast">
       <div *ngIf="control.errors" class="invalid-feedback">

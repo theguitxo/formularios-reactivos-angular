@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { ComunModule } from "src/app/comun/comun.module";
+import { SharedModule } from "src/app/comun/shared.module";
 import { SelectorRoutingModule } from "./selector-routing.module";
 import { CVASelectorComponent } from "./selector/cva-selector/cva-selector.component";
 import { SelectorComponent } from "./selector/selector.component";
@@ -10,7 +10,7 @@ import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   imports: [
-    ComunModule,
+    SharedModule,
     SelectorRoutingModule,
     MatFormFieldModule,
     MatSelectModule,

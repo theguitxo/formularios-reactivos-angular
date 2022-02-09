@@ -1,6 +1,6 @@
 import { Component, EventEmitter, forwardRef, OnInit, Output } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { IIconoIdioma } from "src/app/comun/comun.interface";
+import { ILangIcon } from "src/app/comun/shared.interface.";
 
 @Component({
   selector: 'app-selector-idioma',
@@ -15,31 +15,31 @@ import { IIconoIdioma } from "src/app/comun/comun.interface";
   ]
 })
 export class SelectorIdiomaComponent implements ControlValueAccessor, OnInit {
-  @Output() cambiarIdioma: EventEmitter<IIconoIdioma> = new EventEmitter();
+  @Output() cambiarIdioma: EventEmitter<ILangIcon> = new EventEmitter();
 
   private onTouched!: Function;
   private onChanged!: Function;
 
-  idiomas!: IIconoIdioma[];
+  idiomas!: ILangIcon[];
 
   constructor () {}
 
   ngOnInit(): void {
     this.idiomas = [
       {
-        idioma: 'es',
-        nombre: 'Español',
-        seleccionado: false
+        lang: 'es',
+        name: 'Español',
+        selected: false
       },
       {
-        idioma: 'fr',
-        nombre: 'Frances',
-        seleccionado: false
+        lang: 'fr',
+        name: 'Frances',
+        selected: false
       },
       {
-        idioma: 'en',
-        nombre: 'Ingles',
-        seleccionado: false
+        lang: 'en',
+        name: 'Ingles',
+        selected: false
       }
     ];
   }
@@ -63,10 +63,10 @@ export class SelectorIdiomaComponent implements ControlValueAccessor, OnInit {
   }
 
   seleccionarIdioma(idioma: string): void {
-    this.idiomas.map(i => i.seleccionado = false);
-    const item = this.idiomas.find(i => i.idioma === idioma);
+    this.idiomas.map(i => i.selected = false);
+    const item = this.idiomas.find(i => i.name === idioma);
     if (item) {
-      item.seleccionado = true;
+      item.selected = true;
       this.cambiarIdioma.emit(item);
     }
   }

@@ -221,7 +221,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/IOpcionValorEtiqueta.html" target="_self" >IOpcionValorEtiqueta[]</a></code>
+                        <i>Type : </i>        <code><a href="../interfaces/IOptionValueLabel.html" target="_self" >IOptionValueLabel[]</a></code>
 
                     </td>
                 </tr>
@@ -242,7 +242,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/IOpcionValorEtiqueta.html" target="_self" >IOpcionValorEtiqueta</a></code>
+                        <i>Type : </i>        <code><a href="../interfaces/IOptionValueLabel.html" target="_self" >IOptionValueLabel</a></code>
 
                     </td>
                 </tr>
@@ -307,7 +307,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &quot;@angular/core&quot;;
 import { FormControl } from &quot;@angular/forms&quot;;
-import { IOpcionValorEtiqueta } from &quot;src/app/comun/comun.interface&quot;;
+import { IOptionValueLabel } from &quot;src/app/comun/shared.interface.&quot;;
 
 @Component({
   selector: &#x27;app-custom-radio-button&#x27;,
@@ -315,15 +315,15 @@ import { IOpcionValorEtiqueta } from &quot;src/app/comun/comun.interface&quot;;
   styleUrls: [&#x27;./custom-radio-button.component.scss&#x27;]
 })
 export class CustomRadioButtonComponent implements OnInit {
-  @Input() valores!: IOpcionValorEtiqueta[];
-  @Input() valorInicial!: IOpcionValorEtiqueta;
+  @Input() valores!: IOptionValueLabel[];
+  @Input() valorInicial!: IOptionValueLabel;
   @Input() control!: FormControl;
 
   constructor() {}
 
   ngOnInit(): void {
     if (this.valorInicial) {
-      this.control.setValue(this.valorInicial.valor);
+      this.control.setValue(this.valorInicial.value);
     }
   }
 }
@@ -337,10 +337,10 @@ export class CustomRadioButtonComponent implements OnInit {
       class&#x3D;&quot;form-check-input&quot;
       [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: control.errors }&quot;
       type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;
-      id&#x3D;&quot;{{ &#x27;radio&#x27; + idx }}&quot; [value]&#x3D;&quot;valor.valor&quot;
+      id&#x3D;&quot;{{ &#x27;radio&#x27; + idx }}&quot; [value]&#x3D;&quot;valor.value&quot;
       [formControl]&#x3D;&quot;control&quot;&gt;
     &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;{{ &#x27;radio&#x27; + idx }}&quot;&gt;
-      {{ valor.etiqueta }}
+      {{ valor.label }}
     &lt;/label&gt;
     &lt;ng-container *ngIf&#x3D;&quot;isLast&quot;&gt;
       &lt;div *ngIf&#x3D;&quot;control.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
@@ -384,7 +384,7 @@ export class CustomRadioButtonComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngFor="let valor of valores; let idx = index; let isLast = last">  <div class="form-check pb-2">    <input      class="form-check-input"      [ngClass]="{ \'is-invalid\': control.errors }"      type="radio" name="radio"      id="{{ \'radio\' + idx }}" [value]="valor.valor"      [formControl]="control">    <label class="form-check-label" for="{{ \'radio\' + idx }}">      {{ valor.etiqueta }}    </label>    <ng-container *ngIf="isLast">      <div *ngIf="control.errors" class="invalid-feedback">        <div *ngIf="control.errors.required">El campo es requerido</div>      </div>    </ng-container>  </div></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngFor="let valor of valores; let idx = index; let isLast = last">  <div class="form-check pb-2">    <input      class="form-check-input"      [ngClass]="{ \'is-invalid\': control.errors }"      type="radio" name="radio"      id="{{ \'radio\' + idx }}" [value]="valor.value"      [formControl]="control">    <label class="form-check-label" for="{{ \'radio\' + idx }}">      {{ valor.label }}    </label>    <ng-container *ngIf="isLast">      <div *ngIf="control.errors" class="invalid-feedback">        <div *ngIf="control.errors.required">El campo es requerido</div>      </div>    </ng-container>  </div></ng-container></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomRadioButtonComponent', 'selector': 'app-custom-radio-button'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'SelectorIdiomaComponent', 'selector': 'app-selector-idioma'},{'name': 'TablaDatosComponent', 'selector': 'app-tabla-datos'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CustomRadioButtonComponent'};

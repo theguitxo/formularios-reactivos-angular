@@ -3,8 +3,8 @@
   <mat-select
     [value]="selected"
     (selectionChange)="handleSelectionChange($event)">
-    <mat-option *ngFor="let opcion of opciones" [value]="opcion.valor">
-      {{ opcion.etiqueta }}
+    <mat-option *ngFor="let opcion of opciones" [value]="opcion.value">
+      {{ opcion.label }}
     </mat-option>
   </mat-select>
 </mat-form-field>

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, INJECTOR, Injector, Input, OnInit } from "@angular/core";
 import { ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
+import { IOptionValueLabel } from "src/app/comun/shared.interface.";
 
 @Component({
   selector: 'app-cva-radio-button',
@@ -19,7 +19,7 @@ export class CVARadioButtonComponent implements ControlValueAccessor, OnInit {
   _control!: NgControl;
 
   @Input() nombreRadio!: string;
-  @Input() opciones!: IOpcionValorEtiqueta[];
+  @Input() opciones!: IOptionValueLabel[];
 
   private onTouched!: Function;
   private onChanged!: Function;

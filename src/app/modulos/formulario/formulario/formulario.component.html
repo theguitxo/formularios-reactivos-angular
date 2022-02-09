@@ -43,8 +43,8 @@
           id="provincia"
           [formControlName]="'provincia'">
           <option value="">Elija un valor</option>
-          <option *ngFor="let opcion of opcionesProvincias" [value]="opcion.codigo">
-            {{ opcion.provincia }}
+          <option *ngFor="let opcion of opcionesProvincias" [value]="opcion.code">
+            {{ opcion.state }}
           </option>
         </select>
       </div>

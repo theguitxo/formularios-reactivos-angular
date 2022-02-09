@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { MatRadioChange } from "@angular/material/radio";
-import { IOpcionProvincia, IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
+import { IOptionState, IOptionValueLabel } from "src/app/comun/shared.interface.";
 import { Utils } from "src/app/comun/utils.class";
 import * as listaProvincias from '../../../../assets/provincias.json';
 
@@ -25,23 +25,23 @@ interface IRadioButtonTipoEjemplo {
   styleUrls: ['./selector.component.scss']
 })
 export class SelectorComponent implements OnInit {
-  opciones: IOpcionValorEtiqueta[] = [
+  opciones: IOptionValueLabel[] = [
     {
-      etiqueta: 'Opción 1',
-      valor: 'valor1'
+      label: 'Opción 1',
+      value: 'valor1'
     },
     {
-      etiqueta: 'Opción 2',
-      valor: 'valor2'
+      label: 'Opción 2',
+      value: 'valor2'
     },
     {
-      etiqueta: 'Opción 3',
-      valor: 'valor3'
+      label: 'Opción 3',
+      value: 'valor3'
     }
   ];
   selectorCVA!: FormControl;
 
-  opcionesProvincias!: IOpcionValorEtiqueta[];
+  opcionesProvincias!: IOptionValueLabel[];
   provincia!: string;
   listaProvincias: IListaProvincias = {};
   selectorProvinciasCVA!: FormControl;
@@ -73,11 +73,12 @@ export class SelectorComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.opcionesProvincias = Utils.getJSONDefault(listaProvincias).map((item: IOpcionProvincia) => {
-      this.listaProvincias[item.codigo] = item.provincia;
+    this.opcionesProvincias = Utils.getJSONDefault(listaProvincias).map((item: IOptionState
+      ) => {
+      this.listaProvincias[item.code] = item.state;
       return {
-        valor: item.codigo,
-        etiqueta: item.provincia
+        value: item.code,
+        label: item.state
       }
     });
     this.buildSelectorCVA();

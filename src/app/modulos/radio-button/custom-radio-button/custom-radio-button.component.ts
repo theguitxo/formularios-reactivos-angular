@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
-import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
+import { IOptionValueLabel } from "src/app/comun/shared.interface.";
 
 @Component({
   selector: 'app-custom-radio-button',
@@ -8,15 +8,15 @@ import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
   styleUrls: ['./custom-radio-button.component.scss']
 })
 export class CustomRadioButtonComponent implements OnInit {
-  @Input() valores!: IOpcionValorEtiqueta[];
-  @Input() valorInicial!: IOpcionValorEtiqueta;
+  @Input() valores!: IOptionValueLabel[];
+  @Input() valorInicial!: IOptionValueLabel;
   @Input() control!: FormControl;
 
   constructor() {}
 
   ngOnInit(): void {
     if (this.valorInicial) {
-      this.control.setValue(this.valorInicial.valor);
+      this.control.setValue(this.valorInicial.value);
     }
   }
 }

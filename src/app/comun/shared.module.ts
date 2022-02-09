@@ -22,4 +22,4 @@ import { TablaDatosComponent } from "./tabla-datos/tabla-datos.component";
     SweetAlert2Module
   ]
 })
-export class ComunModule {}
+export class SharedModule {}

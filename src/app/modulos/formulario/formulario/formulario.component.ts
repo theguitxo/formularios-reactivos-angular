@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { SwalComponent } from "@sweetalert2/ngx-sweetalert2";
-import { IIconoIdioma, IOpcionProvincia } from "src/app/comun/comun.interface";
+import { ILangIcon, IOptionState } from "src/app/comun/shared.interface.";
 import { Utils } from "src/app/comun/utils.class";
 import { SweetAlertOptions } from "sweetalert2";
 import * as listaProvincias from '../../../../assets/provincias.json';
@@ -15,9 +15,9 @@ export class FormularioComponent implements OnInit {
   @ViewChild('confirmationSwal') public readonly confirmationSwal!: SwalComponent;
 
   formulario!: FormGroup;
-  opcionesProvincias!: IOpcionProvincia[];
+  opcionesProvincias!: IOptionState[];
   opcionesPopUp!: SweetAlertOptions;
-  idiomaSeleccionado!: IIconoIdioma;
+  idiomaSeleccionado!: ILangIcon;
 
   constructor(
     private readonly fb: FormBuilder
@@ -49,13 +49,13 @@ export class FormularioComponent implements OnInit {
   }
 
   handleEnviar(): void {
-    const provincia = this.opcionesProvincias.find(prov => prov.codigo === this.controles.provincia.value)?.provincia;
+    const provincia = this.opcionesProvincias.find(prov => prov.code === this.controles.provincia.value)?.state;
     this.confirmationSwal.title = `${this.controles.nombre.value} (${this.controles.email.value})`;
-    this.confirmationSwal.text = `${provincia} - ${this.idiomaSeleccionado.nombre}`;
+    this.confirmationSwal.text = `${provincia} - ${this.idiomaSeleccionado.name}`;
     this.confirmationSwal.fire();
   }
 
-  cambiaIdioma(idioma: IIconoIdioma): void {
+  cambiaIdioma(idioma: ILangIcon): void {
     this.idiomaSeleccionado = idioma;
   }
 }

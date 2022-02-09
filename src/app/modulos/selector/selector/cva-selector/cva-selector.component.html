@@ -5,9 +5,9 @@
   <option value="">Seleccione un valor</option>
   <option
     *ngFor="let opcion of opciones"
-    [value]="opcion.valor"
-    [selected]="(opcion.valor === selected)">
-    {{ opcion.etiqueta }}
+    [value]="opcion.value"
+    [selected]="(opcion.value === selected)">
+    {{ opcion.label }}
   </option>
 </select>
 <div class="invalid-feedback">El campo es requerido</div>

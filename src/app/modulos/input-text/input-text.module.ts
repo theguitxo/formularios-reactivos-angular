@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { ComunModule } from "src/app/comun/comun.module";
+import { SharedModule } from "src/app/comun/shared.module";
 import { InputTextRoutingModule } from "./input-text-routing.module";
 import { CVAInputTextExampleComponent } from "./input-text/cva-input-text/cva-input-text-example/cva-input-text-example.component";
 import { CVAInputTextComponent } from "./input-text/cva-input-text/cva-input-text/cva-input-text.component";
@@ -13,7 +13,7 @@ import { InputTextComponent } from './input-text/input-text.component';
 
 @NgModule({
   imports: [
-    ComunModule,
+    SharedModule,
     InputTextRoutingModule
   ],
   declarations: [

@@ -1,6 +1,6 @@
 import { Component, forwardRef, Inject, Injector, INJECTOR, Input, OnInit } from "@angular/core";
-import { ControlValueAccessor, FormControl, NgControl, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
+import { ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { IOptionValueLabel } from "src/app/comun/shared.interface.";
 
 @Component({
   selector: 'app-cva-selector',
@@ -15,7 +15,7 @@ import { IOpcionValorEtiqueta } from "src/app/comun/comun.interface";
   ]
 })
 export class CVASelectorComponent implements ControlValueAccessor, OnInit {
-  @Input() opciones!: IOpcionValorEtiqueta[];
+  @Input() opciones!: IOptionValueLabel[];
   @Input() valorInicial!: string;
 
   _control!: NgControl;

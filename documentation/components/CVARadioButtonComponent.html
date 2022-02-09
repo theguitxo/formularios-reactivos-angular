@@ -310,7 +310,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/IOpcionValorEtiqueta.html" target="_self" >IOpcionValorEtiqueta[]</a></code>
+                        <i>Type : </i>        <code><a href="../interfaces/IOptionValueLabel.html" target="_self" >IOptionValueLabel[]</a></code>
 
                     </td>
                 </tr>
@@ -763,7 +763,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, INJECTOR, Injector, Input, OnInit } from &quot;@angular/core&quot;;
 import { ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR } from &quot;@angular/forms&quot;;
-import { IOpcionValorEtiqueta } from &quot;src/app/comun/comun.interface&quot;;
+import { IOptionValueLabel } from &quot;src/app/comun/shared.interface.&quot;;
 
 @Component({
   selector: &#x27;app-cva-radio-button&#x27;,
@@ -782,7 +782,7 @@ export class CVARadioButtonComponent implements ControlValueAccessor, OnInit {
   _control!: NgControl;
 
   @Input() nombreRadio!: string;
-  @Input() opciones!: IOpcionValorEtiqueta[];
+  @Input() opciones!: IOptionValueLabel[];
 
   private onTouched!: Function;
   private onChanged!: Function;
@@ -829,11 +829,11 @@ export class CVARadioButtonComponent implements ControlValueAccessor, OnInit {
     [name]&#x3D;&quot;nombreRadio&quot;
     [id]&#x3D;&quot;&#x27;checkbox&#x27; + idx&quot;
     class&#x3D;&quot;form-check-input&quot;
-    [value]&#x3D;&quot;opcion.valor&quot;
+    [value]&#x3D;&quot;opcion.value&quot;
     [disabled]&#x3D;&quot;_control.disabled&quot;
-    [checked]&#x3D;&quot;selected &#x3D;&#x3D;&#x3D; opcion.valor&quot;
+    [checked]&#x3D;&quot;selected &#x3D;&#x3D;&#x3D; opcion.value&quot;
     (change)&#x3D;&quot;handleRadioButtonChange($event)&quot;&gt;
-  &lt;label class&#x3D;&quot;form-check-label&quot; [for]&#x3D;&quot;&#x27;checkbox&#x27; + idx&quot;&gt;{{ opcion.etiqueta }}&lt;/label&gt;
+  &lt;label class&#x3D;&quot;form-check-label&quot; [for]&#x3D;&quot;&#x27;checkbox&#x27; + idx&quot;&gt;{{ opcion.label }}&lt;/label&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -870,7 +870,7 @@ export class CVARadioButtonComponent implements ControlValueAccessor, OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  *ngFor="let opcion of opciones; let idx = index"  class="form-check">  <input    type="radio"    [name]="nombreRadio"    [id]="\'checkbox\' + idx"    class="form-check-input"    [value]="opcion.valor"    [disabled]="_control.disabled"    [checked]="selected === opcion.valor"    (change)="handleRadioButtonChange($event)">  <label class="form-check-label" [for]="\'checkbox\' + idx">{{ opcion.etiqueta }}</label></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div  *ngFor="let opcion of opciones; let idx = index"  class="form-check">  <input    type="radio"    [name]="nombreRadio"    [id]="\'checkbox\' + idx"    class="form-check-input"    [value]="opcion.value"    [disabled]="_control.disabled"    [checked]="selected === opcion.value"    (change)="handleRadioButtonChange($event)">  <label class="form-check-label" [for]="\'checkbox\' + idx">{{ opcion.label }}</label></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomRadioButtonComponent', 'selector': 'app-custom-radio-button'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'SelectorIdiomaComponent', 'selector': 'app-selector-idioma'},{'name': 'TablaDatosComponent', 'selector': 'app-tabla-datos'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CVARadioButtonComponent'};
