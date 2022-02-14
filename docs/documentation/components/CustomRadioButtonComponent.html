@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/modulos/radio-button/custom-radio-button/custom-radio-button.component.ts</code>
+    <code>src/app/modules/radio-button/custom-radio-button/custom-radio-button.component.ts</code>
 </p>
 
 
@@ -180,7 +180,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modulos/radio-button/custom-radio-button/custom-radio-button.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modules/radio-button/custom-radio-button/custom-radio-button.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -206,7 +206,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modulos/radio-button/custom-radio-button/custom-radio-button.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modules/radio-button/custom-radio-button/custom-radio-button.component.ts:13</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -227,7 +227,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modulos/radio-button/custom-radio-button/custom-radio-button.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modules/radio-button/custom-radio-button/custom-radio-button.component.ts:11</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -248,7 +248,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/modulos/radio-button/custom-radio-button/custom-radio-button.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/modules/radio-button/custom-radio-button/custom-radio-button.component.ts:12</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -283,7 +283,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/modulos/radio-button/custom-radio-button/custom-radio-button.component.ts:17</a></div>
+                            class="link-to-prism">src/app/modules/radio-button/custom-radio-button/custom-radio-button.component.ts:17</a></div>
                 </td>
             </tr>
 
@@ -307,7 +307,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &quot;@angular/core&quot;;
 import { FormControl } from &quot;@angular/forms&quot;;
-import { IOptionValueLabel } from &quot;src/app/comun/shared.interface.&quot;;
+import { IOptionValueLabel } from &quot;src/app/shared/shared.inteface&quot;;
 
 @Component({
   selector: &#x27;app-custom-radio-button&#x27;,
@@ -385,7 +385,7 @@ export class CustomRadioButtonComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ng-container *ngFor="let valor of valores; let idx = index; let isLast = last">  <div class="form-check pb-2">    <input      class="form-check-input"      [ngClass]="{ \'is-invalid\': control.errors }"      type="radio" name="radio"      id="{{ \'radio\' + idx }}" [value]="valor.value"      [formControl]="control">    <label class="form-check-label" for="{{ \'radio\' + idx }}">      {{ valor.label }}    </label>    <ng-container *ngIf="isLast">      <div *ngIf="control.errors" class="invalid-feedback">        <div *ngIf="control.errors.required">El campo es requerido</div>      </div>    </ng-container>  </div></ng-container></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomRadioButtonComponent', 'selector': 'app-custom-radio-button'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'SelectorIdiomaComponent', 'selector': 'app-selector-idioma'},{'name': 'TablaDatosComponent', 'selector': 'app-tabla-datos'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ControlDataTableComponent', 'selector': 'app-control-data-table'},{'name': 'CustomRadioButtonComponent', 'selector': 'app-custom-radio-button'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'LangSelectorComponent', 'selector': 'app-lang-selector'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'StyleSelectorComponent', 'selector': 'app-style-selector'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CustomRadioButtonComponent'};
 </script>

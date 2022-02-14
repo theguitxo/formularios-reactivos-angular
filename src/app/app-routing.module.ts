@@ -1,31 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './componentes/inicio/inicio.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
     path: 'input-text',
-    loadChildren: () => import('./modulos/input-text/input-text.module').then(m => m.InputTextModule)
+    loadChildren: () => import('./modules/input-text/input-text.module').then(m => m.InputTextModule)
   },
   {
     path: 'radio-button-checkbox',
-    loadChildren: () => import('./modulos/radio-button/radio-button-checkbox.module').then(m => m.RadioButtonCheckboxModule)
+    loadChildren: () => import('./modules/radio-button/radio-button-checkbox.module').then(m => m.RadioButtonCheckboxModule)
   },
   {
     path: 'selector',
-    loadChildren: () => import('./modulos/selector/selector.module').then(m => m.SelectorModule)
+    loadChildren: () => import('./modules/selector/selector.module').then(m => m.SelectorModule)
   },
   {
-    path: 'formulario',
-    loadChildren: () => import('./modulos/formulario/formulario.module').then(m => m.FormularioModule)
+    path: 'form',
+    loadChildren: () => import('./modules/form/form.module').then(m => m.FormModule)
   },
   {
-    path: 'inicio',
-    component: InicioComponent,
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: '**',
-    redirectTo: '/inicio'
+    redirectTo: '/home'
   },
 ];
 

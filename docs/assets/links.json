@@ -1,0 +1,27 @@
+[
+  {
+    "order": 10,
+    "route": "/inicio",
+    "title": "Inicio"
+  },
+  {
+    "order": 20,
+    "route": "/input-text",
+    "title": "Input text"
+  },
+  {
+    "order": 30,
+    "route": "/radio-button-checkbox",
+    "title": "Radio button / Checkbox"
+  },
+  {
+    "order": 40,
+    "route": "/selector",
+    "title": "Selector"
+  },
+  {
+    "order": 50,
+    "route": "/form",
+    "title": "Formulario"
+  }
+]

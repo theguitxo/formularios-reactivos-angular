@@ -1,0 +1,12 @@
+<div class="form-label">Idioma:</div>
+<div class="flags-list">
+  <ul>
+    <li
+      *ngFor="let item of langs"
+      [class.selected]="item.selected"
+      [title]="item.name"
+      (click)="handleClickLanguage(item.lang)">
+      <img [src]="'assets/flags/' +  item.lang + '.png'" />
+    </li>
+  </ul>
+</div>

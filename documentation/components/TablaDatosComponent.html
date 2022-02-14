@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/comun/tabla-datos/tabla-datos.component.ts</code>
+    <code>src/app/shared/tabla-datos/tabla-datos.component.ts</code>
 </p>
 
 
@@ -188,7 +188,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/comun/tabla-datos/tabla-datos.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/tabla-datos/tabla-datos.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -214,7 +214,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/comun/tabla-datos/tabla-datos.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/tabla-datos/tabla-datos.component.ts:10</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -249,7 +249,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/comun/tabla-datos/tabla-datos.component.ts:15</a></div>
+                            class="link-to-prism">src/app/shared/tabla-datos/tabla-datos.component.ts:15</a></div>
                 </td>
             </tr>
 
@@ -290,7 +290,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/comun/tabla-datos/tabla-datos.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/tabla-datos/tabla-datos.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -388,7 +388,7 @@ export class TablaDatosComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><table class="table table-success table-striped">  <tbody>    <tr>      <th class="w-25">PRISTINE</th>      <td>{{ control.pristine }}</td>    </tr>    <tr>      <th class="w-25">TOUCHED</th>      <td>{{ control.touched }}</td>    </tr>    <tr>      <th class="w-25">VALUE</th>      <td *ngIf="!valueIsObject">{{ control.value }}</td>      <td *ngIf="valueIsObject">{{ control.value | json }}</td>    </tr>    <tr>      <th class="w-25">STATE</th>      <td>{{ control.status }}</td>    </tr>    <tr *ngIf="!valueIsObject">      <th class="w-25">ERRORS</th>      <td>        <ng-container *ngIf="control.errors">{{ control.errors | json }}</ng-container>      </td>    </tr>  </tbody></table></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomRadioButtonComponent', 'selector': 'app-custom-radio-button'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormularioComponent', 'selector': 'app-formulario'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'SelectorIdiomaComponent', 'selector': 'app-selector-idioma'},{'name': 'TablaDatosComponent', 'selector': 'app-tabla-datos'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CustomRadioButtonComponent', 'selector': 'app-custom-radio-button'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'LangSelectorComponent', 'selector': 'app-lang-selector'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'StyleSelectorComponent', 'selector': 'app-style-selector'},{'name': 'TablaDatosComponent', 'selector': 'app-tabla-datos'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TablaDatosComponent'};
 </script>

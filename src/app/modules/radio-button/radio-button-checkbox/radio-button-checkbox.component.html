@@ -1,0 +1,30 @@
+<!-- Radio button con valor requerido -->
+<div class="row px-0 mb-4">
+  <div class="col-6">
+    <app-custom-radio-button
+      [valores]="valores"
+      [control]="inputRadioRequerido">
+    </app-custom-radio-button>
+  </div>
+  <div class="col-6">
+    <app-control-data-table [control]="inputRadioRequerido"></app-control-data-table>
+  </div>
+</div>
+
+<!-- Radio button con componente CVA -->
+<div class="row px-0 mb-4">
+  <div class="col-6">
+    <app-cva-radio-button
+      [nombreRadio]="'radioCVA'"
+      [formControl]="inputRadioCVA"
+      [opciones]="valores">
+    </app-cva-radio-button>
+    <div *ngIf="inputRadioCVASeleccionado" class="py-2">
+      Valor Seleccionado: {{ inputRadioCVASeleccionado }}
+    </div>
+  </div>
+  <div class="col-6">
+    <button type="button" class="btn btn-primary me-2" [disabled]="inputRadioCVA.enabled" (click)="enableRadio()">Enable</button>
+    <button type="button" class="btn btn-primary" [disabled]="inputRadioCVA.disabled" (click)="disableRadio()">Disable</button>
+  </div>
+</div>

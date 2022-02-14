@@ -64,10 +64,19 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/comun/shared.interface..ts</code>
+            <code>src/app/shared/shared.inteface.ts</code>
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Define las opciones de los campos
+de formulario que manejan un valor
+y un etiqueta como los radio buttons</p>
+
+            </p>
 
 
         <section>
@@ -136,6 +145,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Etiqueta para la opción</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -169,6 +184,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Valor para la opción</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -176,19 +197,68 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface IOptionValueLabel {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface ILink {
+  /**
+   * Orden para mostrar en pantalla
+   */
+  order: number;
+  /**
+   * Ruta de angular a cargar
+   */
+  route: string;
+  /**
+   * Titulo para mostrar en pantallaa
+   */
+  title: string;
+}
+
+/**
+ * Define las opciones de los campos
+ * de formulario que manejan un valor
+ * y un etiqueta como los radio buttons
+ */
+export interface IOptionValueLabel {
+  /**
+   * Valor para la opción
+   */
   value: string;
+  /**
+   * Etiqueta para la opción
+   */
   label: string;
 }
 
+/**
+ * Información de una opción
+ * para un listado de provincias
+ */
 export interface IOptionState {
+  /**
+   * Código de la provincia
+   */
   code: string;
+  /**
+   * Nombre de la provincia
+   */
   state: string
 }
 
+/**
+ * Información para las opciones del
+ * componente para seleccionar idioma
+ */
 export interface ILangIcon {
+  /**
+   * Código del idioma
+   */
   lang: string;
+  /**
+   * Nombre del idioma
+   */
   name: string;
+  /**
+   * Indicador si es el seleccionado
+   */
   selected: boolean;
 }
 </code></pre>

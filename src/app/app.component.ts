@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import * as listaEnlaces from '../assets/enlaces.json';
-import { Utils } from './comun/utils.class';
-interface IEnlace {
-  orden: number;
-  ruta: string;
-  titulo: string;
-}
+import { Utils } from './shared/utils.class';
+import * as linksList from '../assets/links.json';
+import { ILink } from './shared/shared.inteface';
 
+/**
+ * Component principal de la aplicación
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,11 +13,17 @@ interface IEnlace {
 })
 export class AppComponent implements OnInit {
 
-  enlaces!: IEnlace[];
+  /**
+   * Lista de rutas a mostrar
+   */
+  links!: ILink[];
 
+  /**
+   * OnInit: carga la lista de rutas a mostrar
+   */
   ngOnInit(): void {
-    this.enlaces = Utils.getJSONDefault(listaEnlaces).sort((a: IEnlace, b: IEnlace) => {
-      return a.orden < b.orden ? -1 : 1;
+    this.links = Utils.getJSONDefault(linksList).sort((a: ILink, b: ILink) => {
+      return a.order < b.order ? -1 : 1;
     });
   }
 }
