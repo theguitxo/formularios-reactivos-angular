@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { Subscription } from "rxjs";
+import { StyleSelectorService } from "src/app/shared/services/style-selector.service";
+import { COMPONENTS_STYLE } from "src/app/shared/shared.constants";
 import { IOptionValueLabel } from "src/app/shared/shared.inteface";
 
 @Component({
@@ -33,6 +35,7 @@ export class RadioButtonCheckboxComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly fb: FormBuilder,
+    private readonly styleSelectorService: StyleSelectorService
   ) {}
 
   ngOnInit(): void {
@@ -70,5 +73,9 @@ export class RadioButtonCheckboxComponent implements OnInit, OnDestroy {
 
   disableRadio(): void {
     this.inputRadioCVA.disable();
+  }
+
+  handleChangeStyleSelector(value: COMPONENTS_STYLE): void {
+    this.styleSelectorService.changeValue(value);
   }
 }

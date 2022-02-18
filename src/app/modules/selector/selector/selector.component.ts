@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { MatRadioChange } from "@angular/material/radio";
+import { StyleSelectorService } from "src/app/shared/services/style-selector.service";
 import { IOptionState, IOptionValueLabel } from "src/app/shared/shared.inteface";
 import { Utils } from "src/app/shared/utils.class";
 import * as statesList from '../../../../assets/states.json';
@@ -67,7 +68,8 @@ export class SelectorComponent implements OnInit {
   isReactive = false;
 
   constructor(
-    private readonly fb: FormBuilder
+    private readonly fb: FormBuilder,
+    private readonly styleSelectorService: StyleSelectorService
   ) {}
 
   ngOnInit(): void {

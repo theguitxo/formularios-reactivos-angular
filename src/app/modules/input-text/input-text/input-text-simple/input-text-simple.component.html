@@ -1,19 +1,6 @@
-<!-- <div class="row">
-  <div class="col-12 pb-4">
-    <ul class="nav nav-pills justify-content-center">
-      <li class="nav-item cursor-pointer border rounded mx-2">
-        <a class="nav-link" [class.active]="isBootstrap" (click)="changeTo(optionsStyle.BOOTSTRAP)">Bootstrap</a>
-      </li>
-      <li class="nav-item cursor-pointer border rounded mx-2">
-        <a class="nav-link" [class.active]="isMaterial" (click)="changeTo(optionsStyle.MATERIAL)">Material</a>
-      </li>
-    </ul>
-  </div>
-</div> -->
-<app-style-selector></app-style-selector>
 <div class="row">
   <div class="col-8">
-    <div class="form-floating mb-3">
+    <div *ngIf="isBootstrap | async" class="form-floating mb-3">
       <input
         type="text"
         id="inputTextBootstrap"
@@ -22,6 +9,8 @@
         [formControl]="inputTextBootstrap" />
       <label for="inputTextBootstrap">Input de texto</label>
     </div>
+
+    <div *ngIf="isMaterial | async">Material</div>
   </div>
 
   <div class="col-4">

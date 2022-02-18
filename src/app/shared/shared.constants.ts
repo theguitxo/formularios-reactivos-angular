@@ -1,0 +1,4 @@
+export enum COMPONENTS_STYLE {
+  'BOOTSTRAP',
+  'MATERIAL'
+}

@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { StyleSelectorService } from "src/app/shared/services/style-selector.service";
 import { SharedModule } from "src/app/shared/shared.module";
 import { InputTextRoutingModule } from "./input-text-routing.module";
 import { CVAInputTextExampleComponent } from "./input-text/cva-input-text/cva-input-text-example/cva-input-text-example.component";
@@ -26,6 +27,9 @@ import { InputTextComponent } from './input-text/input-text.component';
     InputTextValidPatternComponent,
     CVAInputTextComponent,
     CVAInputTextExampleComponent
+  ],
+  providers: [
+    StyleSelectorService
   ]
 })
 export class InputTextModule {}

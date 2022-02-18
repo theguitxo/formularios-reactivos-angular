@@ -2,10 +2,10 @@
   <div class="col-12 pb-4">
     <ul class="nav nav-pills justify-content-center">
       <li class="nav-item cursor-pointer border rounded mx-2">
-        <a class="nav-link" [class.active]="true" (click)="changeTo()">Bootstrap</a>
+        <a class="nav-link" [class.active]="isBootstrap | async" (click)="changeTo(optionsStyle.BOOTSTRAP)">Bootstrap</a>
       </li>
       <li class="nav-item cursor-pointer border rounded mx-2">
-        <a class="nav-link" [class.active]="false" (click)="changeTo()">Material</a>
+        <a class="nav-link" [class.active]="isMaterial | async" (click)="changeTo(optionsStyle.MATERIAL)">Material</a>
       </li>
     </ul>
   </div>

@@ -7,6 +7,7 @@ import { MaterialSelectorComponent } from "./selector/material-selector/material
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { StyleSelectorService } from "src/app/shared/services/style-selector.service";
 
 @NgModule({
   imports: [
@@ -21,6 +22,9 @@ import { MatRadioModule } from '@angular/material/radio';
     SelectorComponent,
     CVASelectorComponent,
     MaterialSelectorComponent
+  ],
+  providers: [
+    StyleSelectorService
   ]
 })
 export class SelectorModule {}
