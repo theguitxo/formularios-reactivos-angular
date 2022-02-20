@@ -84,7 +84,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/modules/selector/selector/selector.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/modules/selector/selector/selector.component.ts:9</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -98,6 +98,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
 import { FormBuilder, FormControl, Validators } from &quot;@angular/forms&quot;;
 import { MatRadioChange } from &quot;@angular/material/radio&quot;;
+import { StyleSelectorService } from &quot;src/app/shared/services/style-selector.service&quot;;
 import { IOptionState, IOptionValueLabel } from &quot;src/app/shared/shared.inteface&quot;;
 import { Utils } from &quot;src/app/shared/utils.class&quot;;
 import * as statesList from &#x27;../../../../assets/states.json&#x27;;
@@ -164,7 +165,8 @@ export class SelectorComponent implements OnInit {
   isReactive &#x3D; false;
 
   constructor(
-    private readonly fb: FormBuilder
+    private readonly fb: FormBuilder,
+    private readonly styleSelectorService: StyleSelectorService
   ) {}
 
   ngOnInit(): void {

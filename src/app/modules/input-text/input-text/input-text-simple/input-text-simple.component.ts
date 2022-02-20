@@ -16,10 +16,12 @@ import { StyleSelectorService } from "src/app/shared/services/style-selector.ser
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputTextSimpleComponent implements OnInit {
-  inputTextBootstrap!: FormControl;
+  inputText!: FormControl;
 
   isBootstrap!: Observable<boolean>;
   isMaterial!: Observable<boolean>;
+
+  labelInput = 'Input de texto';
 
   constructor(
     private readonly fb: FormBuilder,
@@ -30,11 +32,11 @@ export class InputTextSimpleComponent implements OnInit {
     this.isBootstrap = this.styleSelectorService.isBootstrap;
     this.isMaterial = this.styleSelectorService.isMaterial;
 
-    this.buildInputTextBootstrap();
+    this.buildInputText();
   }
 
-  buildInputTextBootstrap(): void {
-    this.inputTextBootstrap = this.fb.control({
+  buildInputText(): void {
+    this.inputText = this.fb.control({
       value: '',
       disabled: false
     });

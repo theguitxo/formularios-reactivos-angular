@@ -11,11 +11,12 @@ import { InputTextRequiredComponent } from "./input-text/input-text-required/inp
 import { InputTextSimpleComponent } from "./input-text/input-text-simple/input-text-simple.component";
 import { InputTextValidPatternComponent } from "./input-text/input-text-valid-pattern/input-text-valid-pattern.component";
 import { InputTextComponent } from './input-text/input-text.component';
-
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   imports: [
     SharedModule,
-    InputTextRoutingModule
+    InputTextRoutingModule,
+    MatInputModule
   ],
   declarations: [
     InputTextComponent,

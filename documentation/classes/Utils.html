@@ -134,8 +134,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="5"
-                            class="link-to-prism">src/app/shared/utils.class.ts:5</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="8"
+                            class="link-to-prism">src/app/shared/utils.class.ts:8</a></div>
                 </td>
             </tr>
 
@@ -193,9 +193,21 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class Utils {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { FormControl, FormGroupDirective, NgForm } from &quot;@angular/forms&quot;;
+import { ErrorStateMatcher } from &quot;@angular/material/core&quot;;
+
+/**
+ * Devuelve el contenido de un fichero JSON
+ */
+export class Utils {
   static getJSONDefault(data: any): any {
     return (data as any).default;
+  }
+}
+
+export class ErrorMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    return !!(control?.invalid &amp;&amp; !control?.pristine);
   }
 }
 </code></pre>

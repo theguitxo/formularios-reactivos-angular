@@ -1,23 +1,29 @@
 <div class="row">
   <div class="col-8">
-    <div class="form-floating mb-3">
+    <div *ngIf="isBootstrap | async" class="form-floating mb-3">
       <input
         type="number"
         id="inputNumberMinMax"
         class="form-control"
         [ngClass]="{ 'is-invalid': (inputNumberMinMax.errors && !inputNumberMinMax.pristine) }"
-        placeholder="Input numérico con comprobación de mínimo y máximo"
+        [placeholder]="labelInput"
         [formControl]="inputNumberMinMax" />
-      <label for="inputNumberMinMax">Input numérico con comprobación de mínimo y máximo</label>
+      <label for="inputNumberMinMax">{{ labelInput }}</label>
       <div *ngIf="inputNumberMinMax.errors && !inputNumberMinMax.pristine" class="invalid-feedback">
-        <div *ngIf="inputNumberMinMax.errors.min">
-          El mínimo es {{ inputNumberMinMax.errors.min.min }} (el valor actual es {{ inputNumberMinMax.errors.min.actual }})
-        </div>
-        <div *ngIf="inputNumberMinMax.errors.max">
-          El máximo es {{ inputNumberMinMax.errors.max.max }} (el valor actual es {{ inputNumberMinMax.errors.max.actual }})
-        </div>
+        <div *ngIf="inputNumberMinMax.errors.min">{{ errorNoMin }}</div>
+        <div *ngIf="inputNumberMinMax.errors.max">{{ errorNoMax }}</div>
       </div>
     </div>
+
+    <mat-form-field *ngIf="isMaterial | async" appearance="fill">
+      <mat-label>{{ labelInput }}</mat-label>
+      <input type="number" matInput
+        [formControl]="inputNumberMinMax"
+        [placeholder]="labelInput"
+        [errorStateMatcher]="inputNumberMinMaxMatcher">
+      <mat-error *ngIf="inputNumberMinMax.errors?.min">{{ errorNoMin }}</mat-error>
+      <mat-error *ngIf="inputNumberMinMax.errors?.max">{{ errorNoMax }}</mat-error>
+    </mat-form-field>
   </div>
   <div class="col-4">
     <app-control-data-table [control]="inputNumberMinMax"></app-control-data-table>

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-8">
-    <div class="form-floating mb-3">
+    <div *ngIf="isBootstrap | async" class="form-floating mb-3">
       <input
         type="email"
         id="inputTextEmail"
@@ -9,13 +9,22 @@
           'is-invalid': (inputTextEmail.errors && !inputTextEmail.pristine),
           'is-valid': (!inputTextEmail.errors && !inputTextEmail.pristine)
         }"
-        placeholder="Input de texto formato de e-mail válido"
+        [placeholder]="labelInput"
         [formControl]="inputTextEmail" />
-      <label for="inputTextEmail">Input de texto formato de e-mail válido</label>
+      <label for="inputTextEmail">{{ labelInput }}</label>
       <div *ngIf="inputTextEmail.errors && !inputTextEmail.pristine" class="invalid-feedback">
-        <div *ngIf="inputTextEmail.errors.email">Se requiere un formato de e-mail válidos</div>
+        <div *ngIf="inputTextEmail.errors.email">{{ emailFormatMessage }}</div>
       </div>
     </div>
+
+    <mat-form-field *ngIf="isMaterial | async" appearance="fill">
+      <mat-label>{{ labelInput }}</mat-label>
+      <input type="text" matInput
+        [formControl]="inputTextEmail"
+        [placeholder]="labelInput"
+        [errorStateMatcher]="inputTextEmailMatcher">
+      <mat-error *ngIf="inputTextEmail.errors?.email">{{ emailFormatMessage }}</mat-error>
+    </mat-form-field>
   </div>
   <div class="col-4">
     <app-control-data-table [control]="inputTextEmail"></app-control-data-table>

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-8">
-    <div class="form-floating mb-3">
+    <div *ngIf="isBootstrap | async" class="form-floating mb-3">
       <input
         type="text"
         id="inputTextMinMaxLength"
@@ -9,20 +9,27 @@
           'is-invalid': (inputTextMinMaxLength.errors && !inputTextMinMaxLength.pristine),
           'is-valid': (!inputTextMinMaxLength.errors && !inputTextMinMaxLength.pristine)
         }"
-        placeholder="Input de texto con mínimo y máximo de largo de cadena"
+        [placeholder]="labelInput"
         [formControl]="inputTextMinMaxLength" />
-      <label for="inputTextMinMaxLength">Input de texto con mínimo y máximo de largo de cadena</label>
+      <label for="inputTextMinMaxLength">{{ labelInput }}</label>
       <div *ngIf="inputTextMinMaxLength.errors && !inputTextMinMaxLength.pristine" class="invalid-feedback">
-        <div *ngIf="inputTextMinMaxLength.errors.minlength">
-          Se requieren un mínimo de {{ inputTextMinMaxLength.errors.minlength.requiredLength }} (la cadena contiene {{ inputTextMinMaxLength.errors.minlength.actualLength }})
-        </div>
-        <div *ngIf="inputTextMinMaxLength.errors.maxlength">
-          No se pueden superar los {{ inputTextMinMaxLength.errors.maxlength.requiredLength }} caracteres (la cadena contiene {{ inputTextMinMaxLength.errors.maxlength.actualLength }})
-        </div>
+        <div *ngIf="inputTextMinMaxLength.errors.minlength">{{ errorNoMin }}</div>
+        <div *ngIf="inputTextMinMaxLength.errors.maxlength">{{ errorNoMax }}</div>
       </div>
     </div>
+
+    <mat-form-field *ngIf="isMaterial | async" appearance="fill">
+      <mat-label>{{ labelInput }}</mat-label>
+      <input type="text" matInput
+        [formControl]="inputTextMinMaxLength"
+        [placeholder]="labelInput"
+        [errorStateMatcher]="inputTextMinMaxLengthMatcher">
+      <mat-error *ngIf="inputTextMinMaxLength.errors?.minlength">{{ errorNoMin }}</mat-error>
+      <mat-error *ngIf="inputTextMinMaxLength.errors?.maxlength">{{ errorNoMax }}</mat-error>
+    </mat-form-field>
   </div>
   <div class="col-4">
     <app-control-data-table [control]="inputTextMinMaxLength"></app-control-data-table>
   </div>
 </div>
+

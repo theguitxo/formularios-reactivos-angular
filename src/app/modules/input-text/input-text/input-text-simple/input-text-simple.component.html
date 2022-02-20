@@ -5,15 +5,18 @@
         type="text"
         id="inputTextBootstrap"
         class="form-control"
-        placeholder="Input de texto"
-        [formControl]="inputTextBootstrap" />
-      <label for="inputTextBootstrap">Input de texto</label>
+        [placeholder]="labelInput"
+        [formControl]="inputText" />
+      <label for="inputTextBootstrap">{{ labelInput }}</label>
     </div>
 
-    <div *ngIf="isMaterial | async">Material</div>
+    <mat-form-field *ngIf="isMaterial | async" appearance="fill">
+      <mat-label>{{ labelInput }}</mat-label>
+      <input matInput type="text" [formControl]="inputText" [placeholder]="labelInput">
+    </mat-form-field>
   </div>
 
   <div class="col-4">
-    <app-control-data-table [control]="inputTextBootstrap"></app-control-data-table>
+    <app-control-data-table [control]="inputText"></app-control-data-table>
   </div>
 </div>
