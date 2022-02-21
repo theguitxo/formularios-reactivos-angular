@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 
 /**
  * Información de la tarjeta con información
@@ -35,7 +36,13 @@ export class HomeComponent implements OnInit {
 
   cards!: ICard[];
 
-  constructor() { }
+  constructor(
+    @Inject(DOCUMENT) readonly document: Document
+  ) { }
+
+  get window(): Window | null {
+    return this.document.defaultView;
+  }
 
   ngOnInit(): void {
     this.cards = [
@@ -56,4 +63,7 @@ export class HomeComponent implements OnInit {
     ]
   }
 
+  openDocumentation(): void {
+    this.window?.open('./documentation/index.html', '_blank');
+  }
 }

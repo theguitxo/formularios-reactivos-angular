@@ -18,6 +18,8 @@ export class AppComponent implements OnInit {
    */
   links!: ILink[];
 
+  constructor() {}
+
   /**
    * OnInit: carga la lista de rutas a mostrar
    */

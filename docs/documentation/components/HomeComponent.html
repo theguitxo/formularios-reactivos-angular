@@ -144,6 +144,9 @@
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
+                            <li>
+                                <a href="#openDocumentation" >openDocumentation</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -152,6 +155,20 @@
 
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#window" >window</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
         </tbody>
     </table>
 </section>
@@ -162,15 +179,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(document: Document)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/home/home.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/home/home.component.ts:37</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>document</td>
+                                                  
+                                                        <td>
+                                                                    <code>Document</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -204,8 +251,45 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/components/home/home.component.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/components/home/home.component.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openDocumentation"></a>
+                    <span class="name">
+                        <span ><b>openDocumentation</b></span>
+                        <a href="#openDocumentation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openDocumentation()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/components/home/home.component.ts:66</a></div>
                 </td>
             </tr>
 
@@ -246,7 +330,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/home/home.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/home/home.component.ts:37</a></div>
                         </td>
                     </tr>
 
@@ -255,11 +339,39 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="window"></a>
+                        <span class="name"><b>window</b><a href="#window"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>window()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/home/home.component.ts:43</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DOCUMENT } from &#x27;@angular/common&#x27;;
+import { Component, Inject, OnInit } from &#x27;@angular/core&#x27;;
 
 /**
  * Información de la tarjeta con información
@@ -296,7 +408,13 @@ export class HomeComponent implements OnInit {
 
   cards!: ICard[];
 
-  constructor() { }
+  constructor(
+    @Inject(DOCUMENT) readonly document: Document
+  ) { }
+
+  get window(): Window | null {
+    return this.document.defaultView;
+  }
 
   ngOnInit(): void {
     this.cards &#x3D; [
@@ -317,12 +435,24 @@ export class HomeComponent implements OnInit {
     ]
   }
 
+  openDocumentation(): void {
+    this.window?.open(&#x27;./documentation/index.html&#x27;, &#x27;_blank&#x27;);
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
+  &lt;div class&#x3D;&quot;col pt-2 pb-4&quot;&gt;
+    &lt;button
+      type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary btn-lg&quot;
+      (click)&#x3D;&quot;openDocumentation()&quot;&gt;
+      &lt;i class&#x3D;&quot;bi bi-journals me-2&quot;&gt;&lt;/i&gt;Documentación
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;row&quot;&gt;
   &lt;div
     *ngFor&#x3D;&quot;let card of cards&quot;
     class&#x3D;&quot;col-3 pb-2&quot;&gt;
@@ -365,7 +495,7 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row">  <div    *ngFor="let card of cards"    class="col-3 pb-2">    <div class="card">      <div class="card-body">        <h5 class="card-title">{{ card.title }}</h5>        <h6 class="card-subtitle mb-2 text-muted">{{ card.subtitle }}</h6>        <p class="card-text">{{ card.text }}</p>        <a [routerLink]="card.linkRoute">{{ card.titleRoute }}</a>      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col pt-2 pb-4">    <button      type="button" class="btn btn-primary btn-lg"      (click)="openDocumentation()">      <i class="bi bi-journals me-2"></i>Documentación    </button>  </div></div><div class="row">  <div    *ngFor="let card of cards"    class="col-3 pb-2">    <div class="card">      <div class="card-body">        <h5 class="card-title">{{ card.title }}</h5>        <h6 class="card-subtitle mb-2 text-muted">{{ card.subtitle }}</h6>        <p class="card-text">{{ card.text }}</p>        <a [routerLink]="card.linkRoute">{{ card.titleRoute }}</a>      </div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ControlDataTableComponent', 'selector': 'app-control-data-table'},{'name': 'CustomRadioButtonComponent', 'selector': 'app-custom-radio-button'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'LangSelectorComponent', 'selector': 'app-lang-selector'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'StyleSelectorComponent', 'selector': 'app-style-selector'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
