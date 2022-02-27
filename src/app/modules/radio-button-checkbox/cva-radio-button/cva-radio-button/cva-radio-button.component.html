@@ -1,0 +1,31 @@
+<ng-container *ngIf="isBootstrap | async">
+  <div
+    *ngFor="let option of options; let idx = index"
+    class="form-check">
+    <input
+      type="radio"
+      [name]="name"
+      [id]="'radio_cva' + idx"
+      class="form-check-input"
+      [value]="option.value"
+      [disabled]="_control.disabled"
+      [checked]="selected === option.value"
+      (change)="handleRadioButtonChange($event)">
+    <label class="form-check-label" [for]="'radio_cva' + idx">{{ option.label }}</label>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isMaterial | async">
+  <label class="radio-group__label" id="radioButtonRequiredLabel">{{ labelText }}</label>
+  <mat-radio-group
+    aria-labelledby="radioButtonRequiredLabel"
+    class="radio-group--vertical"
+    (change)="handleRadioButtonChange($event)">
+    <mat-radio-button
+      class="radio-button--vertical"
+      [disabled]="_control.disabled"
+      *ngFor="let option of options" [value]="option.value">
+      {{ option.label }}
+    </mat-radio-button>
+  </mat-radio-group>
+</ng-container>

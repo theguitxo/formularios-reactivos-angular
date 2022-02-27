@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { SwalComponent } from "@sweetalert2/ngx-sweetalert2";
-import { ILangIcon, IOptionState } from "src/app/shared/shared.inteface";
+import { ILangIcon, IOptionState } from "src/app/shared/shared.intefarce";
 import { Utils } from "src/app/shared/utils.class";
 import { SweetAlertOptions } from "sweetalert2";
 import * as statesList from '../../../../assets/states.json';

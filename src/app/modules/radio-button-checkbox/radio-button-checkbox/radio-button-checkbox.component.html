@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-12">
+    <app-style-selector></app-style-selector>
+  </div>
+</div>
+
+<div class="accordion accordion-flush" id="radioButtonCheckboxAccordion">
+  <!-- Radio button con valor requerido -->
+  <div class="accordion-item">
+    <div class="accordion-header" id="radioButtonRequired">
+      <button class="accordion-button collapsed" type="button"
+        data-bs-toggle="collapse" data-bs-target="#radioButtonRequiredCollapse"
+        aria-expanded="true" aria-controls="radioButtonRequiredCollapse">
+        Radio button requerido
+      </button>
+    </div>
+
+    <div
+      id="radioButtonRequiredCollapse"
+      class="accordion-collpase collapse show"
+      aria-labelledby="radioButtonRequired">
+      <div class="accordion-body">
+        <app-radio-button-required></app-radio-button-required>
+      </div>
+    </div>
+  </div>
+
+  <!-- Radio button con componente CVA -->
+  <div class="accordion-item">
+    <div class="accordion-header" id="radioButtonCVA">
+      <button class="accordion-button collapsed" type="button"
+        data-bs-toggle="collapse" data-bs-target="#radioButtonCVACollapse"
+        aria-expanded="true" aria-controls="radioButtonCVACollapse">
+        Radio button con componente CVA
+      </button>
+    </div>
+
+    <div
+      id="radioButtonCVACollapse"
+      class="accordion-collpase collapse show"
+      aria-labelledby="radioButtonCVA">
+      <div class="accordion-body">
+        <app-cva-radio-button-example></app-cva-radio-button-example>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

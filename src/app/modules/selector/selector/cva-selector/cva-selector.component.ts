@@ -1,6 +1,6 @@
 import { Component, forwardRef, Inject, Injector, INJECTOR, Input, OnInit } from "@angular/core";
 import { ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { IOptionValueLabel } from "src/app/shared/shared.inteface";
+import { IOptionValueLabel } from "src/app/shared/shared.intefarce";
 
 @Component({
   selector: 'app-cva-selector',

@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-cva-input-text-example',
-  templateUrl: './cva-input-text-example.component.html'
+  templateUrl: './cva-input-text-example.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CVAInputTextExampleComponent implements OnInit {
 

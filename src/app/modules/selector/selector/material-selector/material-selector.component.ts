@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { MatSelectChange } from "@angular/material/select";
-import { IOptionValueLabel } from "src/app/shared/shared.inteface";
+import { IOptionValueLabel } from "src/app/shared/shared.intefarce";
 
 @Component({
   selector: 'app-material-selector',

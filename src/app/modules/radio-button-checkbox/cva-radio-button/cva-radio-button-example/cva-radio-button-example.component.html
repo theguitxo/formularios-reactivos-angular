@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-8">
+    <div class="row px-0 mb-4">
+      <div class="col-6">
+        <app-cva-radio-button
+          [name]="'radioCVA'"
+          [formControl]="radioButtonCVA"
+          [options]="options">
+        </app-cva-radio-button>
+        <div *ngIf="radioButtonCVASelected" class="py-2">{{ radioButtonCVASelectedString }}</div>
+      </div>
+      <div class="col-6">
+        <button type="button" class="btn btn-primary me-2" [disabled]="radioButtonCVA.enabled" (click)="enableRadio()">{{ enableString }}</button>
+        <button type="button" class="btn btn-primary" [disabled]="radioButtonCVA.disabled" (click)="disableRadio()">{{ disableString }}</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <app-control-data-table [control]="radioButtonCVA"></app-control-data-table>
+  </div>
+</div>

@@ -14,13 +14,13 @@
 <title>cluster_SelectorModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-157.8 1031,-157.8 1031,-32.8 8,-32.8"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_SelectorModule_imports</title>
-<polygon fill="none" stroke="black" points="741,-40.8 741,-92.8 1023,-92.8 1023,-40.8 741,-40.8"/>
-</g>
 <g id="clust9" class="cluster">
 <title>cluster_SelectorModule_providers</title>
-<polygon fill="none" stroke="black" points="535,-40.8 535,-92.8 733,-92.8 733,-40.8 535,-40.8"/>
+<polygon fill="none" stroke="black" points="825,-40.8 825,-92.8 1023,-92.8 1023,-40.8 825,-40.8"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_SelectorModule_imports</title>
+<polygon fill="none" stroke="black" points="535,-40.8 535,-92.8 817,-92.8 817,-40.8 535,-40.8"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_SelectorModule_declarations</title>
@@ -35,14 +35,14 @@
 <!-- SelectorModule -->
 <g id="node4" class="node">
 <title>SelectorModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="589.92,-149.8 586.92,-153.8 565.92,-153.8 562.92,-149.8 484.08,-149.8 484.08,-113.8 589.92,-113.8 589.92,-149.8"/>
-<text text-anchor="middle" x="537" y="-127.6" font-family="Times,serif" font-size="14.00">SelectorModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="568.92,-149.8 565.92,-153.8 544.92,-153.8 541.92,-149.8 463.08,-149.8 463.08,-113.8 568.92,-113.8 568.92,-149.8"/>
+<text text-anchor="middle" x="516" y="-127.6" font-family="Times,serif" font-size="14.00">SelectorModule</text>
 </g>
 <!-- CVASelectorComponent&#45;&gt;SelectorModule -->
 <g id="edge1" class="edge">
 <title>CVASelectorComponent&#45;&gt;SelectorModule</title>
-<path fill="none" stroke="black" d="M501.83,-84.91C501.83,-84.91 501.83,-103.79 501.83,-103.79"/>
-<polygon fill="black" stroke="black" points="498.33,-103.79 501.83,-113.79 505.33,-103.79 498.33,-103.79"/>
+<path fill="none" stroke="black" d="M491.33,-84.91C491.33,-84.91 491.33,-103.79 491.33,-103.79"/>
+<polygon fill="black" stroke="black" points="487.83,-103.79 491.33,-113.79 494.83,-103.79 487.83,-103.79"/>
 </g>
 <!-- MaterialSelectorComponent -->
 <g id="node2" class="node">
@@ -53,8 +53,8 @@
 <!-- MaterialSelectorComponent&#45;&gt;SelectorModule -->
 <g id="edge2" class="edge">
 <title>MaterialSelectorComponent&#45;&gt;SelectorModule</title>
-<path fill="none" stroke="black" d="M257,-84.82C257,-102.17 257,-125.8 257,-125.8 257,-125.8 474,-125.8 474,-125.8"/>
-<polygon fill="black" stroke="black" points="474,-129.3 484,-125.8 474,-122.3 474,-129.3"/>
+<path fill="none" stroke="black" d="M257,-84.82C257,-102.17 257,-125.8 257,-125.8 257,-125.8 453.28,-125.8 453.28,-125.8"/>
+<polygon fill="black" stroke="black" points="453.28,-129.3 463.28,-125.8 453.28,-122.3 453.28,-129.3"/>
 </g>
 <!-- SelectorComponent -->
 <g id="node3" class="node">
@@ -65,44 +65,44 @@
 <!-- SelectorComponent&#45;&gt;SelectorModule -->
 <g id="edge3" class="edge">
 <title>SelectorComponent&#45;&gt;SelectorModule</title>
-<path fill="none" stroke="black" d="M88,-85.08C88,-106.12 88,-137.8 88,-137.8 88,-137.8 474.17,-137.8 474.17,-137.8"/>
-<polygon fill="black" stroke="black" points="474.17,-141.3 484.17,-137.8 474.17,-134.3 474.17,-141.3"/>
+<path fill="none" stroke="black" d="M88,-85.08C88,-106.12 88,-137.8 88,-137.8 88,-137.8 453.09,-137.8 453.09,-137.8"/>
+<polygon fill="black" stroke="black" points="453.09,-141.3 463.09,-137.8 453.09,-134.3 453.09,-141.3"/>
 </g>
 <!-- SelectorRoutingModule -->
 <g id="node5" class="node">
 <title>SelectorRoutingModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="1015.04,-84.8 1012.04,-88.8 991.04,-88.8 988.04,-84.8 864.96,-84.8 864.96,-48.8 1015.04,-48.8 1015.04,-84.8"/>
-<text text-anchor="middle" x="940" y="-62.6" font-family="Times,serif" font-size="14.00">SelectorRoutingModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="809.04,-84.8 806.04,-88.8 785.04,-88.8 782.04,-84.8 658.96,-84.8 658.96,-48.8 809.04,-48.8 809.04,-84.8"/>
+<text text-anchor="middle" x="734" y="-62.6" font-family="Times,serif" font-size="14.00">SelectorRoutingModule</text>
 </g>
 <!-- SelectorRoutingModule&#45;&gt;SelectorModule -->
 <g id="edge4" class="edge">
 <title>SelectorRoutingModule&#45;&gt;SelectorModule</title>
-<path fill="none" stroke="black" d="M940,-85.08C940,-106.12 940,-137.8 940,-137.8 940,-137.8 600.1,-137.8 600.1,-137.8"/>
-<polygon fill="black" stroke="black" points="600.1,-134.3 590.1,-137.8 600.1,-141.3 600.1,-134.3"/>
+<path fill="none" stroke="black" d="M734,-84.82C734,-102.17 734,-125.8 734,-125.8 734,-125.8 578.77,-125.8 578.77,-125.8"/>
+<polygon fill="black" stroke="black" points="578.77,-122.3 568.77,-125.8 578.77,-129.3 578.77,-122.3"/>
 </g>
 <!-- SharedModule -->
 <g id="node6" class="node">
 <title>SharedModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="847.42,-84.8 844.42,-88.8 823.42,-88.8 820.42,-84.8 748.58,-84.8 748.58,-48.8 847.42,-48.8 847.42,-84.8"/>
-<text text-anchor="middle" x="798" y="-62.6" font-family="Times,serif" font-size="14.00">SharedModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="641.42,-84.8 638.42,-88.8 617.42,-88.8 614.42,-84.8 542.58,-84.8 542.58,-48.8 641.42,-48.8 641.42,-84.8"/>
+<text text-anchor="middle" x="592" y="-62.6" font-family="Times,serif" font-size="14.00">SharedModule</text>
 </g>
 <!-- SharedModule&#45;&gt;SelectorModule -->
 <g id="edge5" class="edge">
 <title>SharedModule&#45;&gt;SelectorModule</title>
-<path fill="none" stroke="black" d="M798,-84.82C798,-102.17 798,-125.8 798,-125.8 798,-125.8 599.82,-125.8 599.82,-125.8"/>
-<polygon fill="black" stroke="black" points="599.82,-122.3 589.82,-125.8 599.82,-129.3 599.82,-122.3"/>
+<path fill="none" stroke="black" d="M555.75,-84.91C555.75,-84.91 555.75,-103.79 555.75,-103.79"/>
+<polygon fill="black" stroke="black" points="552.25,-103.79 555.75,-113.79 559.25,-103.79 552.25,-103.79"/>
 </g>
 <!-- StyleSelectorService -->
 <g id="node7" class="node">
 <title>StyleSelectorService</title>
-<ellipse fill="#fdb462" stroke="black" cx="634" cy="-66.8" rx="91.46" ry="18"/>
-<text text-anchor="middle" x="634" y="-62.6" font-family="Times,serif" font-size="14.00">StyleSelectorService</text>
+<ellipse fill="#fdb462" stroke="black" cx="924" cy="-66.8" rx="91.46" ry="18"/>
+<text text-anchor="middle" x="924" y="-62.6" font-family="Times,serif" font-size="14.00">StyleSelectorService</text>
 </g>
 <!-- StyleSelectorService&#45;&gt;SelectorModule -->
 <g id="edge6" class="edge">
 <title>StyleSelectorService&#45;&gt;SelectorModule</title>
-<path fill="none" stroke="black" d="M566.11,-79.03C566.11,-79.03 566.11,-103.48 566.11,-103.48"/>
-<polygon fill="black" stroke="black" points="562.61,-103.48 566.11,-113.48 569.61,-103.48 562.61,-103.48"/>
+<path fill="none" stroke="black" d="M924,-85.08C924,-106.12 924,-137.8 924,-137.8 924,-137.8 578.92,-137.8 578.92,-137.8"/>
+<polygon fill="black" stroke="black" points="578.92,-134.3 568.92,-137.8 578.92,-141.3 578.92,-134.3"/>
 </g>
 </g>
 </svg>

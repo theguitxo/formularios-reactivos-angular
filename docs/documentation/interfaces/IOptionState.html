@@ -64,7 +64,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/shared/shared.inteface.ts</code>
+            <code>src/app/shared/shared.intefarce.ts</code>
         </p>
 
 
@@ -259,6 +259,33 @@ export interface ILangIcon {
    * Indicador si es el seleccionado
    */
   selected: boolean;
+}
+
+/**
+ * Información para las tarjetas que se
+ * muestran en la home
+ */
+export interface IHomeCard {
+  /**
+   * Titulo de la tarjeta
+   */
+  title: string;
+  /**
+   * Subtitulo de la tarjeta
+   */
+  subtitle: string;
+  /**
+   * Texto de la tarjeta
+   */
+  text: string;
+  /**
+   * Ruta al componente de la tarjeta
+   */
+  linkRoute: string;
+  /**
+   * Texto a mostrar en el enlace
+   */
+  titleRoute: string;
 }
 </code></pre>
     </div>

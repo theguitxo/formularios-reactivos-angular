@@ -65,3 +65,30 @@ export interface ILangIcon {
    */
   selected: boolean;
 }
+
+/**
+ * Información para las tarjetas que se
+ * muestran en la home
+ */
+export interface IHomeCard {
+  /**
+   * Titulo de la tarjeta
+   */
+  title: string;
+  /**
+   * Subtitulo de la tarjeta
+   */
+  subtitle: string;
+  /**
+   * Texto de la tarjeta
+   */
+  text: string;
+  /**
+   * Ruta al componente de la tarjeta
+   */
+  linkRoute: string;
+  /**
+   * Texto a mostrar en el enlace
+   */
+  titleRoute: string;
+}

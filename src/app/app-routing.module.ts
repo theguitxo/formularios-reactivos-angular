@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'radio-button-checkbox',
-    loadChildren: () => import('./modules/radio-button/radio-button-checkbox.module').then(m => m.RadioButtonCheckboxModule)
+    loadChildren: () => import('./modules/radio-button-checkbox/radio-button-checkbox.module').then(m => m.RadioButtonCheckboxModule)
   },
   {
     path: 'selector',

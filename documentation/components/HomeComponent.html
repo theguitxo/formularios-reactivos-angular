@@ -184,7 +184,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/home/home.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/home/home.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -251,8 +251,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/components/home/home.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/components/home/home.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -288,8 +288,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/app/components/home/home.component.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/components/home/home.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -324,13 +324,13 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/ICard.html" target="_self" >ICard[]</a></code>
+                        <i>Type : </i>        <code><a href="../interfaces/IHomeCard.html" target="_self" >IHomeCard[]</a></code>
 
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/home/home.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/home/home.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -359,7 +359,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/home/home.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/home/home.component.ts:19</a></div>
                                 </td>
                             </tr>
 
@@ -372,33 +372,9 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DOCUMENT } from &#x27;@angular/common&#x27;;
 import { Component, Inject, OnInit } from &#x27;@angular/core&#x27;;
-
-/**
- * Información de la tarjeta con información
- * de la sección a navegar
- */
-interface ICard {
-  /**
-   * Titulo de la tarjeta
-   */
-  title: string;
-  /**
-   * Subtitulo de la tarjeta
-   */
-  subtitle: string;
-  /**
-   * Texto de la tarjeta
-   */
-  text: string;
-  /**
-   * Link de la ruta a navegar
-   */
-  linkRoute: string;
-  /**
-   * Titulo de la ruta a navegar
-   */
-  titleRoute: string;
-}
+import { IHomeCard } from &#x27;../../shared/shared.intefarce&#x27;;
+import * as cardList from &#x27;../../../assets/cards.json&#x27;;
+import { Utils } from &#x27;../../shared/utils.class&#x27;;
 
 @Component({
   selector: &#x27;app-home&#x27;,
@@ -406,7 +382,7 @@ interface ICard {
 })
 export class HomeComponent implements OnInit {
 
-  cards!: ICard[];
+  cards!: IHomeCard[];
 
   constructor(
     @Inject(DOCUMENT) readonly document: Document
@@ -417,22 +393,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cards &#x3D; [
-      {
-        title: &#x27;Input text&#x27;,
-        subtitle: &#x27;Campo de entrada&#x27;,
-        text: &#x60;Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.&#x60;,
-        linkRoute: &#x27;/input-text&#x27;,
-        titleRoute: &#x27;input-text&#x27;
-      },
-      {
-        title: &#x27;Selector&#x27;,
-        subtitle: &#x27;Lista desplegable de valores&#x27;,
-        text: &#x60;Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.&#x60;,
-        linkRoute: &#x27;/input-text&#x27;,
-        titleRoute: &#x27;input-text&#x27;
-      }
-    ]
+    this.cards &#x3D; Utils.getJSONDefault(cardList);
   }
 
   openDocumentation(): void {
@@ -496,7 +457,7 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col pt-2 pb-4">    <button      type="button" class="btn btn-primary btn-lg"      (click)="openDocumentation()">      <i class="bi bi-journals me-2"></i>Documentación    </button>  </div></div><div class="row">  <div    *ngFor="let card of cards"    class="col-3 pb-2">    <div class="card">      <div class="card-body">        <h5 class="card-title">{{ card.title }}</h5>        <h6 class="card-subtitle mb-2 text-muted">{{ card.subtitle }}</h6>        <p class="card-text">{{ card.text }}</p>        <a [routerLink]="card.linkRoute">{{ card.titleRoute }}</a>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ControlDataTableComponent', 'selector': 'app-control-data-table'},{'name': 'CustomRadioButtonComponent', 'selector': 'app-custom-radio-button'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'LangSelectorComponent', 'selector': 'app-lang-selector'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'StyleSelectorComponent', 'selector': 'app-style-selector'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ControlDataTableComponent', 'selector': 'app-control-data-table'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVARadioButtonExampleComponent', 'selector': 'app-cva-radio-button-example'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'LangSelectorComponent', 'selector': 'app-lang-selector'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'RadioButtonRequiredComponent', 'selector': 'app-radio-button-required'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'StyleSelectorComponent', 'selector': 'app-style-selector'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
 </script>

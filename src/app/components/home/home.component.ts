@@ -1,32 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
-
-/**
- * Información de la tarjeta con información
- * de la sección a navegar
- */
-interface ICard {
-  /**
-   * Titulo de la tarjeta
-   */
-  title: string;
-  /**
-   * Subtitulo de la tarjeta
-   */
-  subtitle: string;
-  /**
-   * Texto de la tarjeta
-   */
-  text: string;
-  /**
-   * Link de la ruta a navegar
-   */
-  linkRoute: string;
-  /**
-   * Titulo de la ruta a navegar
-   */
-  titleRoute: string;
-}
+import { IHomeCard } from '../../shared/shared.intefarce';
+import * as cardList from '../../../assets/cards.json';
+import { Utils } from '../../shared/utils.class';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +10,7 @@ interface ICard {
 })
 export class HomeComponent implements OnInit {
 
-  cards!: ICard[];
+  cards!: IHomeCard[];
 
   constructor(
     @Inject(DOCUMENT) readonly document: Document
@@ -45,22 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cards = [
-      {
-        title: 'Input text',
-        subtitle: 'Campo de entrada',
-        text: `Some quick example text to build on the card title and make up the bulk of the card's content.`,
-        linkRoute: '/input-text',
-        titleRoute: 'input-text'
-      },
-      {
-        title: 'Selector',
-        subtitle: 'Lista desplegable de valores',
-        text: `Some quick example text to build on the card title and make up the bulk of the card's content.`,
-        linkRoute: '/input-text',
-        titleRoute: 'input-text'
-      }
-    ]
+    this.cards = Utils.getJSONDefault(cardList);
   }
 
   openDocumentation(): void {

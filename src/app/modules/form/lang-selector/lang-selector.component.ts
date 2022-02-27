@@ -1,6 +1,6 @@
 import { Component, EventEmitter, forwardRef, OnInit, Output } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { ILangIcon } from "src/app/shared/shared.inteface";
+import { ILangIcon } from "src/app/shared/shared.intefarce";
 
 @Component({
   selector: 'app-lang-selector',

@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Utils } from './shared/utils.class';
 import * as linksList from '../assets/links.json';
-import { ILink } from './shared/shared.inteface';
+import { ILink } from './shared/shared.intefarce';
 import { NavigationEnd, Router, Event } from '@angular/router';
 import { filter } from 'rxjs/operators'
 import { Observable, of, Subscription } from 'rxjs';
+
 /**
  * Component principal de la aplicación
  */
