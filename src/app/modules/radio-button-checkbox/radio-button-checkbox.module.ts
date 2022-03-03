@@ -8,6 +8,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { CVARadioButtonComponent } from "./cva-radio-button/cva-radio-button/cva-radio-button.component";
 import { CVARadioButtonExampleComponent } from "./cva-radio-button/cva-radio-button-example/cva-radio-button-example.component";
+import { CheckboxRequiredComponent } from "./checkbox-required/checkbox-required.component";
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { CVARadioButtonExampleComponent } from "./cva-radio-button/cva-radio-but
     RadioButtonCheckboxComponent,
     RadioButtonRequiredComponent,
     CVARadioButtonComponent,
-    CVARadioButtonExampleComponent
+    CVARadioButtonExampleComponent,
+    CheckboxRequiredComponent
   ],
   providers: [
     StyleSelectorService

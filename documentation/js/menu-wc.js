@@ -158,18 +158,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/RadioButtonCheckboxModule.html" data-type="entity-link" >RadioButtonCheckboxModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-RadioButtonCheckboxModule-21a02cdfc887f89cfbebbec08ce67fa935301416225347e75c92475840054f55407ac1bb54cae692fe43b86508a7ebb0f5e99e8e90df4a74c629872308ab1f0e"' : 'data-target="#xs-components-links-module-RadioButtonCheckboxModule-21a02cdfc887f89cfbebbec08ce67fa935301416225347e75c92475840054f55407ac1bb54cae692fe43b86508a7ebb0f5e99e8e90df4a74c629872308ab1f0e"' }>
+                                            'data-target="#components-links-module-RadioButtonCheckboxModule-6c3289f5e54af18a9054a76aad48c03eb585109f3838dd189d6c048d05cace50b578ab2eb2ca515fb706a91e8e782ebade9a97450dd10577a3b6d87dcab86f76"' : 'data-target="#xs-components-links-module-RadioButtonCheckboxModule-6c3289f5e54af18a9054a76aad48c03eb585109f3838dd189d6c048d05cace50b578ab2eb2ca515fb706a91e8e782ebade9a97450dd10577a3b6d87dcab86f76"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-RadioButtonCheckboxModule-21a02cdfc887f89cfbebbec08ce67fa935301416225347e75c92475840054f55407ac1bb54cae692fe43b86508a7ebb0f5e99e8e90df4a74c629872308ab1f0e"' :
-                                            'id="xs-components-links-module-RadioButtonCheckboxModule-21a02cdfc887f89cfbebbec08ce67fa935301416225347e75c92475840054f55407ac1bb54cae692fe43b86508a7ebb0f5e99e8e90df4a74c629872308ab1f0e"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-RadioButtonCheckboxModule-6c3289f5e54af18a9054a76aad48c03eb585109f3838dd189d6c048d05cace50b578ab2eb2ca515fb706a91e8e782ebade9a97450dd10577a3b6d87dcab86f76"' :
+                                            'id="xs-components-links-module-RadioButtonCheckboxModule-6c3289f5e54af18a9054a76aad48c03eb585109f3838dd189d6c048d05cace50b578ab2eb2ca515fb706a91e8e782ebade9a97450dd10577a3b6d87dcab86f76"' }>
                                             <li class="link">
                                                 <a href="components/CVARadioButtonComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CVARadioButtonComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/CVARadioButtonExampleComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CVARadioButtonExampleComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/CheckboxRequiredComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CheckboxRequiredComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/RadioButtonCheckboxComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RadioButtonCheckboxComponent</a>
@@ -181,13 +184,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-RadioButtonCheckboxModule-21a02cdfc887f89cfbebbec08ce67fa935301416225347e75c92475840054f55407ac1bb54cae692fe43b86508a7ebb0f5e99e8e90df4a74c629872308ab1f0e"' : 'data-target="#xs-injectables-links-module-RadioButtonCheckboxModule-21a02cdfc887f89cfbebbec08ce67fa935301416225347e75c92475840054f55407ac1bb54cae692fe43b86508a7ebb0f5e99e8e90df4a74c629872308ab1f0e"' }>
+                                        'data-target="#injectables-links-module-RadioButtonCheckboxModule-6c3289f5e54af18a9054a76aad48c03eb585109f3838dd189d6c048d05cace50b578ab2eb2ca515fb706a91e8e782ebade9a97450dd10577a3b6d87dcab86f76"' : 'data-target="#xs-injectables-links-module-RadioButtonCheckboxModule-6c3289f5e54af18a9054a76aad48c03eb585109f3838dd189d6c048d05cace50b578ab2eb2ca515fb706a91e8e782ebade9a97450dd10577a3b6d87dcab86f76"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-RadioButtonCheckboxModule-21a02cdfc887f89cfbebbec08ce67fa935301416225347e75c92475840054f55407ac1bb54cae692fe43b86508a7ebb0f5e99e8e90df4a74c629872308ab1f0e"' :
-                                        'id="xs-injectables-links-module-RadioButtonCheckboxModule-21a02cdfc887f89cfbebbec08ce67fa935301416225347e75c92475840054f55407ac1bb54cae692fe43b86508a7ebb0f5e99e8e90df4a74c629872308ab1f0e"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-RadioButtonCheckboxModule-6c3289f5e54af18a9054a76aad48c03eb585109f3838dd189d6c048d05cace50b578ab2eb2ca515fb706a91e8e782ebade9a97450dd10577a3b6d87dcab86f76"' :
+                                        'id="xs-injectables-links-module-RadioButtonCheckboxModule-6c3289f5e54af18a9054a76aad48c03eb585109f3838dd189d6c048d05cace50b578ab2eb2ca515fb706a91e8e782ebade9a97450dd10577a3b6d87dcab86f76"' }>
                                         <li class="link">
                                             <a href="injectables/StyleSelectorService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StyleSelectorService</a>
                                         </li>

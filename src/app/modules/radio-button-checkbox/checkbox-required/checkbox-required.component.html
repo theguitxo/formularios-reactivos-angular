@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-8">
+    <div *ngIf="isBootstrap | async">
+      <div class="checkbox" *ngFor="let check of checkboxValues; let idx = index; let isLast = last">
+        <input
+          type="checkbox"
+          name="{{ 'checkbox' + idx }}"
+          id="{{ 'checkbox' + idx }}"
+          class="form-check-input checkbox-option"
+          [ngClass]="{
+            'is-invalid': checkboxRequired.errors?.minlength && checkboxRequired.pristine,
+            'is-valid': !checkboxRequired.errors?.minlength && checkboxRequired.value.length
+          }"
+          [value]="check.id"
+          (change)="onCheckboxChange($event)">
+        <label class="form-check-label" for="{{ 'checkbox' + idx }}">{{ check.label }}</label>
+        <ng-container *ngIf="isLast">
+          <div *ngIf="checkboxRequired.errors?.minlength" class="invalid-feedback">
+            {{ errorMessage }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+<!--
+    <ng-container *ngIf="isMaterial | async">
+      <label class="radio-group__label" id="radioButtonRequiredLabel">{{ labelText }}</label>
+      <mat-radio-group
+        aria-labelledby="radioButtonRequiredLabel"
+        class="radio-group--vertical"
+        [formControl]="inputRadioRequired">
+        <mat-radio-button
+          class="radio-button--vertical"
+          *ngFor="let option of options" [value]="option.value">
+          {{ option.label }}
+        </mat-radio-button>
+      </mat-radio-group>
+      <mat-error *ngIf="inputRadioRequired.errors?.required">
+        {{ requiredMessage }}
+      </mat-error>
+    </ng-container> -->
+  </div>
+  <div class="col-4">
+    <app-control-data-table [control]="checkboxRequired"></app-control-data-table>
+  </div>
+</div>
