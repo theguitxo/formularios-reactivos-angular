@@ -43,15 +43,18 @@ export class CheckboxRequiredComponent implements OnInit {
 
     this.checkboxRequired = this.fb.array([], [
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(2)
     ]);
   }
 
   onCheckboxChange(event: any): void {
-    if (event.target.checked) {
-      this.checkboxRequired.push(new FormControl(event.target.value));
+    const isChecked = event.target ? event.target.checked : event.checked;
+    const checkboxValue = event.target ? event.target.value : event.source.value;
+
+    if (isChecked) {
+      this.checkboxRequired.push(new FormControl(checkboxValue));
     } else {
-      const index = this.checkboxRequired.controls.findIndex(item => item.value === event.target.value);
+      const index = this.checkboxRequired.controls.findIndex(item => item.value === checkboxValue);
       if (index > -1) {
         this.checkboxRequired.removeAt(index);
       }

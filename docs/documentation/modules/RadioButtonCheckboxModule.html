@@ -260,23 +260,27 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
-import { StyleSelectorService } from &quot;src/app/shared/services/style-selector.service&quot;;
 import { SharedModule } from &quot;src/app/shared/shared.module&quot;;
 import { RadioButtonCheckboxRoutingModule } from &quot;./radio-button-checkbox-routing.module&quot;;
-import { RadioButtonCheckboxComponent } from &quot;./radio-button-checkbox/radio-button-checkbox.component&quot;;
-import { RadioButtonRequiredComponent } from &quot;./radio-button-required/radio-button-required.component&quot;;
+
 import { MatRadioModule } from &#x27;@angular/material/radio&#x27;;
 import { MatFormFieldModule } from &quot;@angular/material/form-field&quot;;
+import { MatCheckboxModule } from &#x27;@angular/material/checkbox&#x27;;
+
+import { StyleSelectorService } from &quot;src/app/shared/services/style-selector.service&quot;;
+
+import { RadioButtonCheckboxComponent } from &quot;./radio-button-checkbox/radio-button-checkbox.component&quot;;
+import { RadioButtonRequiredComponent } from &quot;./radio-button-required/radio-button-required.component&quot;;
 import { CVARadioButtonComponent } from &quot;./cva-radio-button/cva-radio-button/cva-radio-button.component&quot;;
 import { CVARadioButtonExampleComponent } from &quot;./cva-radio-button/cva-radio-button-example/cva-radio-button-example.component&quot;;
 import { CheckboxRequiredComponent } from &quot;./checkbox-required/checkbox-required.component&quot;;
-
 @NgModule({
   imports: [
     SharedModule,
     RadioButtonCheckboxRoutingModule,
     MatRadioModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule
   ],
   declarations: [
     RadioButtonCheckboxComponent,

@@ -46,8 +46,6 @@ export class CVARadioButtonComponent implements ControlValueAccessor, OnInit, On
 
     this._control = this.injector.get(NgControl);
     this.statusChangesSubscription = this._control.statusChanges?.subscribe(() => this.cd.markForCheck());
-
-    console.log(this._control);
   }
 
   ngOnDestroy(): void {

@@ -1,5 +1,7 @@
 <div class="row">
   <div class="col-8">
+    <p>Se ha de escoger un mínimo de dos opciones.</p>
+
     <div *ngIf="isBootstrap | async">
       <div class="checkbox" *ngFor="let check of checkboxValues; let idx = index; let isLast = last">
         <input
@@ -21,23 +23,20 @@
         </ng-container>
       </div>
     </div>
-<!--
-    <ng-container *ngIf="isMaterial | async">
-      <label class="radio-group__label" id="radioButtonRequiredLabel">{{ labelText }}</label>
-      <mat-radio-group
-        aria-labelledby="radioButtonRequiredLabel"
-        class="radio-group--vertical"
-        [formControl]="inputRadioRequired">
-        <mat-radio-button
-          class="radio-button--vertical"
-          *ngFor="let option of options" [value]="option.value">
-          {{ option.label }}
-        </mat-radio-button>
-      </mat-radio-group>
-      <mat-error *ngIf="inputRadioRequired.errors?.required">
-        {{ requiredMessage }}
+
+    <div class="checkbox-list" *ngIf="isMaterial | async">
+      <mat-checkbox
+        *ngFor="let check of checkboxValues; let idx = index"
+        name="{{ 'checkbox' + idx }}"
+        id="{{ 'checkbox' + idx }}"
+        [value]="check.id"
+        (change)="onCheckboxChange($event)">
+        {{ check.label }}
+      </mat-checkbox>
+      <mat-error *ngIf="checkboxRequired.errors?.minlength">
+        {{ errorMessage }}
       </mat-error>
-    </ng-container> -->
+    </div>
   </div>
   <div class="col-4">
     <app-control-data-table [control]="checkboxRequired"></app-control-data-table>

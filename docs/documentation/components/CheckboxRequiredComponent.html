@@ -541,15 +541,18 @@ export class CheckboxRequiredComponent implements OnInit {
 
     this.checkboxRequired &#x3D; this.fb.array([], [
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(2)
     ]);
   }
 
   onCheckboxChange(event: any): void {
-    if (event.target.checked) {
-      this.checkboxRequired.push(new FormControl(event.target.value));
+    const isChecked &#x3D; event.target ? event.target.checked : event.checked;
+    const checkboxValue &#x3D; event.target ? event.target.value : event.source.value;
+
+    if (isChecked) {
+      this.checkboxRequired.push(new FormControl(checkboxValue));
     } else {
-      const index &#x3D; this.checkboxRequired.controls.findIndex(item &#x3D;&gt; item.value &#x3D;&#x3D;&#x3D; event.target.value);
+      const index &#x3D; this.checkboxRequired.controls.findIndex(item &#x3D;&gt; item.value &#x3D;&#x3D;&#x3D; checkboxValue);
       if (index &gt; -1) {
         this.checkboxRequired.removeAt(index);
       }
@@ -567,6 +570,8 @@ export class CheckboxRequiredComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row&quot;&gt;
   &lt;div class&#x3D;&quot;col-8&quot;&gt;
+    &lt;p&gt;Se ha de escoger un mínimo de dos opciones.&lt;/p&gt;
+
     &lt;div *ngIf&#x3D;&quot;isBootstrap | async&quot;&gt;
       &lt;div class&#x3D;&quot;checkbox&quot; *ngFor&#x3D;&quot;let check of checkboxValues; let idx &#x3D; index; let isLast &#x3D; last&quot;&gt;
         &lt;input
@@ -588,23 +593,20 @@ export class CheckboxRequiredComponent implements OnInit {
         &lt;/ng-container&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-&lt;!--
-    &lt;ng-container *ngIf&#x3D;&quot;isMaterial | async&quot;&gt;
-      &lt;label class&#x3D;&quot;radio-group__label&quot; id&#x3D;&quot;radioButtonRequiredLabel&quot;&gt;{{ labelText }}&lt;/label&gt;
-      &lt;mat-radio-group
-        aria-labelledby&#x3D;&quot;radioButtonRequiredLabel&quot;
-        class&#x3D;&quot;radio-group--vertical&quot;
-        [formControl]&#x3D;&quot;inputRadioRequired&quot;&gt;
-        &lt;mat-radio-button
-          class&#x3D;&quot;radio-button--vertical&quot;
-          *ngFor&#x3D;&quot;let option of options&quot; [value]&#x3D;&quot;option.value&quot;&gt;
-          {{ option.label }}
-        &lt;/mat-radio-button&gt;
-      &lt;/mat-radio-group&gt;
-      &lt;mat-error *ngIf&#x3D;&quot;inputRadioRequired.errors?.required&quot;&gt;
-        {{ requiredMessage }}
+
+    &lt;div class&#x3D;&quot;checkbox-list&quot; *ngIf&#x3D;&quot;isMaterial | async&quot;&gt;
+      &lt;mat-checkbox
+        *ngFor&#x3D;&quot;let check of checkboxValues; let idx &#x3D; index&quot;
+        name&#x3D;&quot;{{ &#x27;checkbox&#x27; + idx }}&quot;
+        id&#x3D;&quot;{{ &#x27;checkbox&#x27; + idx }}&quot;
+        [value]&#x3D;&quot;check.id&quot;
+        (change)&#x3D;&quot;onCheckboxChange($event)&quot;&gt;
+        {{ check.label }}
+      &lt;/mat-checkbox&gt;
+      &lt;mat-error *ngIf&#x3D;&quot;checkboxRequired.errors?.minlength&quot;&gt;
+        {{ errorMessage }}
       &lt;/mat-error&gt;
-    &lt;/ng-container&gt; --&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;col-4&quot;&gt;
     &lt;app-control-data-table [control]&#x3D;&quot;checkboxRequired&quot;&gt;&lt;/app-control-data-table&gt;
@@ -623,6 +625,15 @@ export class CheckboxRequiredComponent implements OnInit {
   &amp; + label {
     margin-left: .5rem;
     line-height: 1.5rem;
+  }
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+
+  &amp; &gt; * {
+    margin-bottom: .5rem;
   }
 }
 </code></pre>
@@ -653,7 +664,7 @@ export class CheckboxRequiredComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col-8">    <div *ngIf="isBootstrap | async">      <div class="checkbox" *ngFor="let check of checkboxValues; let idx = index; let isLast = last">        <input          type="checkbox"          name="{{ \'checkbox\' + idx }}"          id="{{ \'checkbox\' + idx }}"          class="form-check-input checkbox-option"          [ngClass]="{            \'is-invalid\': checkboxRequired.errors?.minlength && checkboxRequired.pristine,            \'is-valid\': !checkboxRequired.errors?.minlength && checkboxRequired.value.length          }"          [value]="check.id"          (change)="onCheckboxChange($event)">        <label class="form-check-label" for="{{ \'checkbox\' + idx }}">{{ check.label }}</label>        <ng-container *ngIf="isLast">          <div *ngIf="checkboxRequired.errors?.minlength" class="invalid-feedback">            {{ errorMessage }}          </div>        </ng-container>      </div>    </div><!--    <ng-container *ngIf="isMaterial | async">      <label class="radio-group__label" id="radioButtonRequiredLabel">{{ labelText }}</label>      <mat-radio-group        aria-labelledby="radioButtonRequiredLabel"        class="radio-group--vertical"        [formControl]="inputRadioRequired">        <mat-radio-button          class="radio-button--vertical"          *ngFor="let option of options" [value]="option.value">          {{ option.label }}        </mat-radio-button>      </mat-radio-group>      <mat-error *ngIf="inputRadioRequired.errors?.required">        {{ requiredMessage }}      </mat-error>    </ng-container> -->  </div>  <div class="col-4">    <app-control-data-table [control]="checkboxRequired"></app-control-data-table>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col-8">    <p>Se ha de escoger un mínimo de dos opciones.</p>    <div *ngIf="isBootstrap | async">      <div class="checkbox" *ngFor="let check of checkboxValues; let idx = index; let isLast = last">        <input          type="checkbox"          name="{{ \'checkbox\' + idx }}"          id="{{ \'checkbox\' + idx }}"          class="form-check-input checkbox-option"          [ngClass]="{            \'is-invalid\': checkboxRequired.errors?.minlength && checkboxRequired.pristine,            \'is-valid\': !checkboxRequired.errors?.minlength && checkboxRequired.value.length          }"          [value]="check.id"          (change)="onCheckboxChange($event)">        <label class="form-check-label" for="{{ \'checkbox\' + idx }}">{{ check.label }}</label>        <ng-container *ngIf="isLast">          <div *ngIf="checkboxRequired.errors?.minlength" class="invalid-feedback">            {{ errorMessage }}          </div>        </ng-container>      </div>    </div>    <div class="checkbox-list" *ngIf="isMaterial | async">      <mat-checkbox        *ngFor="let check of checkboxValues; let idx = index"        name="{{ \'checkbox\' + idx }}"        id="{{ \'checkbox\' + idx }}"        [value]="check.id"        (change)="onCheckboxChange($event)">        {{ check.label }}      </mat-checkbox>      <mat-error *ngIf="checkboxRequired.errors?.minlength">        {{ errorMessage }}      </mat-error>    </div>  </div>  <div class="col-4">    <app-control-data-table [control]="checkboxRequired"></app-control-data-table>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CheckboxRequiredComponent', 'selector': 'app-checkbox-required'},{'name': 'ControlDataTableComponent', 'selector': 'app-control-data-table'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVARadioButtonExampleComponent', 'selector': 'app-cva-radio-button-example'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'LangSelectorComponent', 'selector': 'app-lang-selector'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'RadioButtonRequiredComponent', 'selector': 'app-radio-button-required'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'StyleSelectorComponent', 'selector': 'app-style-selector'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CheckboxRequiredComponent'};
