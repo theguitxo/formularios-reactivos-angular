@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { StyleSelectorService } from "src/app/shared/services/style-selector.service";
+import { SimpleSelectorComponent } from "./selector/simple-selector/simple-selector.component";
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { StyleSelectorService } from "src/app/shared/services/style-selector.ser
   ],
   declarations: [
     SelectorComponent,
+    SimpleSelectorComponent,
     CVASelectorComponent,
     MaterialSelectorComponent
   ],

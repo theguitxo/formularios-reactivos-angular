@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { StyleSelectorService } from 'src/app/shared/services/style-selector.service';
+import { SharedClass } from 'src/app/shared/shared.class';
 import { ErrorMatcher } from 'src/app/shared/utils.class';
 
 @Component({
@@ -10,13 +11,9 @@ import { ErrorMatcher } from 'src/app/shared/utils.class';
   templateUrl: './input-number-min-max.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class InputNumberMinMaxComponent implements OnInit, OnDestroy {
-
+export class InputNumberMinMaxComponent extends SharedClass implements OnInit, OnDestroy {
   inputNumberMinMax!: FormControl;
   inputNumberMinMaxMatcher!: ErrorStateMatcher;
-
-  isBootstrap!: Observable<boolean>;
-  isMaterial!: Observable<boolean>;
 
   labelInput = 'Input numérico con comprobación de mínimo y máximo';
 
@@ -27,13 +24,12 @@ export class InputNumberMinMaxComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly styleSelectorService: StyleSelectorService
-  ) {}
+    styleSelectorService: StyleSelectorService
+  ) {
+    super(styleSelectorService);
+  }
 
   ngOnInit(): void {
-    this.isBootstrap = this.styleSelectorService.isBootstrap;
-    this.isMaterial = this.styleSelectorService.isMaterial;
-
     this.buildInputNumberMinMax();
   }
 
