@@ -2,9 +2,11 @@ import { Observable } from "rxjs";
 import { StyleSelectorService } from "./services/style-selector.service";
 import { IOptionValueLabel } from "./shared.intefarce";
 
-export class SharedClass {
+export abstract class SharedClass {
   isBootstrap!: Observable<boolean>;
   isMaterial!: Observable<boolean>;
+
+  requiredMessage = 'El valor es obligatorio';
 
   selectorOptions: IOptionValueLabel[] = [
     {
@@ -21,7 +23,7 @@ export class SharedClass {
     }
   ];
 
-  constructor (private readonly styleSelectorService: StyleSelectorService) {
+  constructor (protected readonly styleSelectorService: StyleSelectorService) {
     this.isBootstrap = this.styleSelectorService.isBootstrap;
     this.isMaterial = this.styleSelectorService.isMaterial;
   }

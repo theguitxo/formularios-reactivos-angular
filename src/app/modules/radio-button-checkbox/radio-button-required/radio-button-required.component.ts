@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
-import { Observable } from "rxjs";
 import { StyleSelectorService } from "src/app/shared/services/style-selector.service";
+import { SharedClass } from "src/app/shared/shared.class";
 import { IOptionValueLabel } from "src/app/shared/shared.intefarce";
 
 @Component({
@@ -10,14 +10,10 @@ import { IOptionValueLabel } from "src/app/shared/shared.intefarce";
   styleUrls: ['./radio-button-required.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RadioButtonRequiredComponent implements OnInit {
-  isBootstrap!: Observable<boolean>;
-  isMaterial!: Observable<boolean>;
-
+export class RadioButtonRequiredComponent extends SharedClass implements OnInit {
   inputRadioRequired!: FormControl;
 
   labelText = 'Se ha de escoger alguna opción';
-  requiredMessage = 'El valor es requerido. Se ha de escoger un valor.';
 
   options: IOptionValueLabel[] = [
     {
@@ -36,13 +32,12 @@ export class RadioButtonRequiredComponent implements OnInit {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly styleSelectorService: StyleSelectorService
-  ) {}
+    styleSelectorService: StyleSelectorService
+  ) {
+    super(styleSelectorService);
+  }
 
   ngOnInit(): void {
-    this.isBootstrap = this.styleSelectorService.isBootstrap;
-    this.isMaterial = this.styleSelectorService.isMaterial;
-
     this.buildInputRadioRequired();
   }
 

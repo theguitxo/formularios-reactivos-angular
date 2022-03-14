@@ -15,7 +15,6 @@ export class InputTextRequiredComponent extends SharedClass implements OnInit {
   inputTextRequiredMatcher!: ErrorStateMatcher;
 
   labelInput = 'Input de texto con valor requerido';
-  requiredMessage = 'El valor es obligatorio';
 
   constructor(
     private readonly fb: FormBuilder,

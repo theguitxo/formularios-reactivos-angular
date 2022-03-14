@@ -2,16 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { FormArray, FormBuilder, FormControl, Validators } from "@angular/forms";
 import { Observable } from "rxjs";
 import { StyleSelectorService } from "src/app/shared/services/style-selector.service";
+import { SharedClass } from "src/app/shared/shared.class";
 
 @Component({
   selector: 'app-checkbox-required',
   templateUrl: './checkbox-required.component.html',
   styleUrls: ['./checkbox-required.component.scss']
 })
-export class CheckboxRequiredComponent implements OnInit {
-  isBootstrap!: Observable<boolean>;
-  isMaterial!: Observable<boolean>;
-
+export class CheckboxRequiredComponent extends SharedClass implements OnInit {
   checkboxRequired!: FormArray;
   checkboxValues!: { id: string, label: string }[];
 
@@ -19,13 +17,12 @@ export class CheckboxRequiredComponent implements OnInit {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly styleSelectorService: StyleSelectorService
-  ) {}
+    styleSelectorService: StyleSelectorService
+  ) {
+    super(styleSelectorService);
+  }
 
   ngOnInit(): void {
-    this.isBootstrap = this.styleSelectorService.isBootstrap;
-    this.isMaterial = this.styleSelectorService.isMaterial;
-
     this.checkboxValues = [
       {
         id: 'id1',

@@ -1,0 +1,38 @@
+<div class="form-floating" *ngIf="isBootstrap">
+  <select
+    class="form-select"
+    [ngClass]="{
+      'is-invalid': !disabled && cvaSelectorControl.errors,
+      'is-valid': !disabled && !cvaSelectorControl.errors
+    }"
+    id="cvaRequiredSelector"
+    [disabled]="disabled"
+    [formControl]="cvaSelectorControl">
+    <option
+      *ngFor="let option of selectorOptions"
+      [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+  <label for="cvaRequiredSelector">{{ labelText }}</label>
+  <div *ngIf="cvaSelectorControl.errors?.required" class="invalid-feedback">
+    {{ requiredMessage }}
+  </div>
+</div>
+
+<mat-form-field *ngIf="isMaterial" appearance="fill">
+  <mat-label>{{ labelText }}</mat-label>
+  <mat-select
+    [disabled]="disabled"
+    [formControl]="cvaSelectorControl"
+    [errorStateMatcher]="cvaSelectorControlMatcher">
+    <mat-option
+      *ngFor="let option of selectorOptions"
+      [value]="option.value">
+      {{ option.label }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="cvaSelectorControl.errors?.required">
+    {{ requiredMessage }}
+  </mat-error>
+</mat-form-field>

@@ -155,6 +155,9 @@
                                 <a href="#isMaterial" >isMaterial</a>
                             </li>
                             <li>
+                                <a href="#requiredMessage" >requiredMessage</a>
+                            </li>
+                            <li>
                                 <a href="#selectorOptions" >selectorOptions</a>
                             </li>
                         </ul>
@@ -521,6 +524,44 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="requiredMessage"></a>
+                    <span class="name">
+                        <span ><b>requiredMessage</b></span>
+                        <a href="#requiredMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;El valor es obligatorio&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/SharedClass.html" target="_self" >SharedClass</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/SharedClass.html#source" target="_self" >SharedClass:9</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="selectorOptions"></a>
                     <span class="name">
                         <span ><b>selectorOptions</b></span>
@@ -560,7 +601,7 @@
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/SharedClass.html#source" target="_self" >SharedClass:9</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/SharedClass.html#source" target="_self" >SharedClass:11</a></code>
 </div>
                         </td>
                     </tr>
@@ -677,7 +718,7 @@ export class InputTextValidPatternComponent extends SharedClass implements OnIni
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="row">  <div class="col-8">    <div *ngIf="isBootstrap | async" class="form-floating mb-3">      <input        type="text"        id="inputTextPattern"        class="form-control"        [ngClass]="{ \'is-invalid\': (inputTextPattern.errors && !inputTextPattern.pristine) }"        [placeholder]="labelInput"        [formControl]="inputTextPattern" />      <label for="inputTextPattern">{{ labelInput }}</label>      <div *ngIf="inputTextPattern.errors && !inputTextPattern.pristine" class="invalid-feedback">        <div *ngIf="inputTextPattern.errors.pattern">{{ errorMessage }}</div>      </div>    </div>    <mat-form-field *ngIf="isMaterial | async" appearance="fill">      <mat-label>{{ labelInput }}</mat-label>      <input type="text" matInput        [formControl]="inputTextPattern"        [placeholder]="labelInput"        [errorStateMatcher]="inputTextPatternMatcher">      <mat-error *ngIf="inputTextPattern.errors?.pattern">{{ errorMessage }}</mat-error>    </mat-form-field>  </div>  <div class="col-4">    <app-control-data-table [control]="inputTextPattern"></app-control-data-table>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CheckboxRequiredComponent', 'selector': 'app-checkbox-required'},{'name': 'ControlDataTableComponent', 'selector': 'app-control-data-table'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVARadioButtonExampleComponent', 'selector': 'app-cva-radio-button-example'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'LangSelectorComponent', 'selector': 'app-lang-selector'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'RadioButtonRequiredComponent', 'selector': 'app-radio-button-required'},{'name': 'RequiredSelectorComponent', 'selector': 'app-required-selector'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'SimpleSelectorComponent', 'selector': 'app-simple-selector'},{'name': 'StyleSelectorComponent', 'selector': 'app-style-selector'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CheckboxRequiredComponent', 'selector': 'app-checkbox-required'},{'name': 'ControlDataTableComponent', 'selector': 'app-control-data-table'},{'name': 'CVAInputTextComponent', 'selector': 'app-cva-input-text'},{'name': 'CVAInputTextExampleComponent', 'selector': 'app-cva-input-text-example'},{'name': 'CVARadioButtonComponent', 'selector': 'app-cva-radio-button'},{'name': 'CVARadioButtonExampleComponent', 'selector': 'app-cva-radio-button-example'},{'name': 'CVASelectorComponent', 'selector': 'app-cva-selector'},{'name': 'CVASelectorExampleComponent', 'selector': 'app-cva-selector-example'},{'name': 'FormComponent', 'selector': 'app-form'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputNumberMinMaxComponent', 'selector': 'app-input-number-min-max'},{'name': 'InputTextComponent', 'selector': 'app-input-text'},{'name': 'InputTextEmailComponent', 'selector': 'app-input-text-email'},{'name': 'InputTextMinMaxLengthComponent', 'selector': 'app-input-text-min-max-length'},{'name': 'InputTextRequiredComponent', 'selector': 'app-input-text-required'},{'name': 'InputTextSimpleComponent', 'selector': 'app-input-text-simple'},{'name': 'InputTextValidPatternComponent', 'selector': 'app-input-text-valid-pattern'},{'name': 'LangSelectorComponent', 'selector': 'app-lang-selector'},{'name': 'MaterialSelectorComponent', 'selector': 'app-material-selector'},{'name': 'RadioButtonCheckboxComponent', 'selector': 'app-radio-button-checkbox'},{'name': 'RadioButtonRequiredComponent', 'selector': 'app-radio-button-required'},{'name': 'RequiredSelectorComponent', 'selector': 'app-required-selector'},{'name': 'SelectorComponent', 'selector': 'app-selector'},{'name': 'SimpleSelectorComponent', 'selector': 'app-simple-selector'},{'name': 'StyleSelectorComponent', 'selector': 'app-style-selector'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'InputTextValidPatternComponent'};
 </script>

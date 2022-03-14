@@ -15,3 +15,9 @@ export class ErrorMatcher implements ErrorStateMatcher {
     return !!(control?.invalid && !control?.pristine);
   }
 }
+
+export class ErrorMatcherNoPristine implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    return !!(control?.invalid);
+  }
+}

@@ -4,23 +4,63 @@
   </div>
 </div>
 
-<div class="accordion accordion-flush" id="selectorSimple">
+<div class="accordion accordion-flush" id="simpleSelector">
   <!-- Selector simple -->
   <div class="accordion-item">
-    <div class="accordion-header" id="selectorSimple">
+    <div class="accordion-header" id="simpleSelector">
       <button class="accordion-button collapsed" type="button"
-        data-bs-toggle="collapse" data-bs-target="#selectorSimpleCollapse"
-        aria-expanded="true" aria-controls="selectorSimpleCollapse">
+        data-bs-toggle="collapse" data-bs-target="#simpleSelectorCollapse"
+        aria-expanded="true" aria-controls="simpleSelectorCollapse">
         Selector sin validaciones
       </button>
     </div>
 
     <div
-      id="selectorSimpleCollapse"
+      id="simpleSelectorCollapse"
       class="accordion-collpase collapse show"
-      aria-labelledby="selectorSimple">
+      aria-labelledby="simpleSelector">
       <div class="accordion-body">
         <app-simple-selector></app-simple-selector>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selector requerido -->
+  <div class="accordion-item">
+    <div class="accordion-header" id="requiredSelector">
+      <button class="accordion-button collapsed" type="button"
+        data-bs-toggle="collapse" data-bs-target="#requiredSelectorCollapse"
+        aria-expanded="true" aria-controls="requiredSelectorCollapse">
+        Selector con valor requerido
+      </button>
+    </div>
+
+    <div
+      id="requiredSelectorCollapse"
+      class="accordion-collpase collapse show"
+      aria-labelledby="requiredSelector">
+      <div class="accordion-body">
+        <app-required-selector></app-required-selector>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selector CVA -->
+  <div class="accordion-item">
+    <div class="accordion-header" id="cvaSelector">
+      <button class="accordion-button collapsed" type="button"
+        data-bs-toggle="collapse" data-bs-target="#cvaSelectorCollapse"
+        aria-expanded="true" aria-controls="cvaSelectorCollapse">
+        Selector con CVA
+      </button>
+    </div>
+
+    <div
+      id="cvaSelectorCollapse"
+      class="accordion-collpase collapse show"
+      aria-labelledby="cvaSelector">
+      <div class="accordion-body">
+        <app-cva-selector-example></app-cva-selector-example>
       </div>
     </div>
   </div>
