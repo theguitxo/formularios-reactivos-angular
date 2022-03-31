@@ -94,6 +94,10 @@ const routes: Routes &#x3D; [
     loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/form/form.module&#x27;).then(m &#x3D;&gt; m.FormModule)&quot;
   },
   {
+    path: &#x27;text-area&#x27;,
+    loadChildren: () &#x3D;&gt; &quot;import(&#x27;./modules/text-area/text-area.module&#x27;).then(m &#x3D;&gt; m.TextAreaModule)&quot;
+  },
+  {
     path: &#x27;home&#x27;,
     component: HomeComponent,
   },

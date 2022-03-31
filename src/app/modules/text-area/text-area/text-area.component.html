@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-12">
+    <app-style-selector></app-style-selector>
+  </div>
+</div>
+
+<div class="accordion accordion-flush" id="textAreaAccordion">
+  <!-- Text area with counter -->
+  <div class="accordion-item">
+    <div class="accordion-header" id="textAreaCount">
+      <button class="accordion-button collapsed" type="button"
+        data-bs-toggle="collapse" data-bs-target="#textAreaCountCollapse"
+        aria-expanded="true" aria-controls="textAreaCountCollapse">
+        Text-area con contador de caracteres
+      </button>
+    </div>
+
+    <div
+      id="textAreaCountCollapse"
+      class="accordion-collpase collapse"
+      aria-labelledby="textAreaCount">
+      <div class="accordion-body">
+        <app-text-area-count></app-text-area-count>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text area with max length in value -->
+  <div class="accordion-item">
+    <div class="accordion-header" id="textAreaMax">
+      <button class="accordion-button collapsed" type="button"
+        data-bs-toggle="collapse" data-bs-target="#textAreaMaxCollapse"
+        aria-expanded="true" aria-controls="textAreaMaxCollapse">
+        Text-area con valor requerido y máximo de caracteres
+      </button>
+    </div>
+
+    <div
+      id="textAreaMaxCollapse"
+      class="accordion-collpase collapse"
+      aria-labelledby="textAreaMax">
+      <div class="accordion-body">
+        <app-text-area-max></app-text-area-max>
+      </div>
+    </div>
+  </div>
+</div>

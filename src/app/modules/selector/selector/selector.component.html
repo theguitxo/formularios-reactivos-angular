@@ -17,7 +17,7 @@
 
     <div
       id="simpleSelectorCollapse"
-      class="accordion-collpase collapse show"
+      class="accordion-collpase collapse"
       aria-labelledby="simpleSelector">
       <div class="accordion-body">
         <app-simple-selector></app-simple-selector>
@@ -37,7 +37,7 @@
 
     <div
       id="requiredSelectorCollapse"
-      class="accordion-collpase collapse show"
+      class="accordion-collpase collapse"
       aria-labelledby="requiredSelector">
       <div class="accordion-body">
         <app-required-selector></app-required-selector>
@@ -57,7 +57,7 @@
 
     <div
       id="cvaSelectorCollapse"
-      class="accordion-collpase collapse show"
+      class="accordion-collpase collapse"
       aria-labelledby="cvaSelector">
       <div class="accordion-body">
         <app-cva-selector-example></app-cva-selector-example>
@@ -66,24 +66,6 @@
   </div>
 </div>
 <!-- <div class="row px-0 mb-4">
-  <div class="col-6">
-    <app-cva-selector
-      [formControl]="selectorCVA"
-      [options]="opciones"
-      [initialValue]="'valor2'">
-    </app-cva-selector>
-  </div>
-  <div class="col-6">
-    <app-control-data-table [control]="selectorCVA"></app-control-data-table>
-    <div  class="py-2">
-      <button class="btn btn-primary me-2" (click)="setValue('valor1')">Seleccionar Opcion 1</button>
-      <button class="btn btn-primary me-2" (click)="setValue('valor2')">Seleccionar Opcion 2</button>
-      <button class="btn btn-primary me-2" (click)="setValue('valor3')">Seleccionar Opcion 3</button>
-    </div>
-  </div>
-</div>
-
-<div class="row px-0 mb-4">
   <div class="col-6">
     <div class="py-2">
       <mat-radio-group

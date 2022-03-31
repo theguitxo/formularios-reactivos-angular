@@ -6,7 +6,8 @@ import { AbstractControl } from "@angular/forms";
  */
 @Component({
   selector: 'app-control-data-table',
-  templateUrl: './control-data-table.component.html'
+  templateUrl: './control-data-table.component.html',
+  styleUrls: ['./control-data-table.component.scss']
 })
 export class ControlDataTableComponent implements OnInit {
   /**

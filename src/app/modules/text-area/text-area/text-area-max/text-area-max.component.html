@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-8">
+    <div *ngIf="isBootstrap | async" class="form-floating mb-3">
+      <textarea
+        class="form-control text-area-max"
+        [ngClass]="{
+          'is-invalid': textAreaMaxControl.errors,
+          'is-valid': !textAreaMaxControl.errors
+        }"
+        id="textAreaMax"
+        [formControl]="textAreaMaxControl"></textarea>
+        <label for="textAreaMax">{{ labelTextArea }}</label>
+        <div
+          *ngIf="textAreaMaxControl.errors?.maxlength"
+          class="invalid-feedback text-end">
+          <div>
+            Se ha superado el máximo de caracteres ({{ textAreaMaxControl.errors?.maxlength?.requiredLength }})
+          </div>
+        </div>
+    </div>
+
+    <mat-form-field *ngIf="isMaterial | async" appearance="fill">
+      <mat-label>{{ labelTextArea }}</mat-label>
+      <textarea matInput
+        class="text-area-max"
+        [formControl]="textAreaMaxControl"
+        [errorStateMatcher]="textAreaMaxControlMatcher"
+        [placeholder]="labelTextArea"></textarea>
+        <mat-error
+          align="end"
+          *ngIf="textAreaMaxControl.errors?.maxlength">
+          Se ha superado el máximo de caracteres ({{ textAreaMaxControl.errors?.maxlength?.requiredLength }})
+        </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="col-4">
+    <app-control-data-table [control]="textAreaMaxControl"></app-control-data-table>
+  </div>
+</div>

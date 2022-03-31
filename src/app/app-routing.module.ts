@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/form/form.module').then(m => m.FormModule)
   },
   {
+    path: 'text-area',
+    loadChildren: () => import('./modules/text-area/text-area.module').then(m => m.TextAreaModule)
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },

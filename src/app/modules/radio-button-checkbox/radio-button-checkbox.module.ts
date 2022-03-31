@@ -9,10 +9,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { StyleSelectorService } from "src/app/shared/services/style-selector.service";
 
 import { RadioButtonCheckboxComponent } from "./radio-button-checkbox/radio-button-checkbox.component";
-import { RadioButtonRequiredComponent } from "./radio-button-required/radio-button-required.component";
-import { CVARadioButtonComponent } from "./cva-radio-button/cva-radio-button/cva-radio-button.component";
-import { CVARadioButtonExampleComponent } from "./cva-radio-button/cva-radio-button-example/cva-radio-button-example.component";
-import { CheckboxRequiredComponent } from "./checkbox-required/checkbox-required.component";
+import { CheckboxRequiredComponent } from "./radio-button-checkbox/checkbox-required/checkbox-required.component";
+import { CVARadioButtonComponent } from "./radio-button-checkbox/cva-radio-button/cva-radio-button/cva-radio-button.component";
+import { CVARadioButtonExampleComponent } from "./radio-button-checkbox/cva-radio-button/cva-radio-button-example/cva-radio-button-example.component";
+import { RadioButtonRequiredComponent } from "./radio-button-checkbox/radio-button-required/radio-button-required.component";
 @NgModule({
   imports: [
     SharedModule,

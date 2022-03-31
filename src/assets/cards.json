@@ -18,6 +18,13 @@
     "subtitle": "Casillas de verificación y radio buttons",
     "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
     "linkRoute": "/radio-button-checkbox",
-    "titleRoute": "checkbox y radio button"
+    "titleRoute": "Checkbox y radio button"
+  },
+  {
+    "title": "Text area",
+    "subtitle": "Text area",
+    "text": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "linkRoute": "/text-area",
+    "titleRoute": "Text area"
   }
 ]

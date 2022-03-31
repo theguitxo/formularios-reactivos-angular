@@ -9,9 +9,10 @@
       <td>{{ control.touched }}</td>
     </tr>
     <tr>
-      <th class="w-25">VALUE</th>
-      <td *ngIf="!valueIsObject">{{ control.value }}</td>
-      <td *ngIf="valueIsObject">{{ control.value | json }}</td>
+      <th class="w-25 value-cell">VALUE</th>
+      <td class="value-cell">
+        {{ !valueIsObject ? control.value : control.value | json }}
+      </td>
     </tr>
     <tr>
       <th class="w-25">STATE</th>

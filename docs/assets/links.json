@@ -23,5 +23,10 @@
     "order": 50,
     "route": "/form",
     "title": "Formulario"
+  },
+  {
+    "order": 60,
+    "route": "/text-area",
+    "title": "Text area"
   }
 ]
