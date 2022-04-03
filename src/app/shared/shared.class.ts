@@ -23,7 +23,7 @@ export abstract class SharedClass {
     }
   ];
 
-  constructor (protected readonly styleSelectorService: StyleSelectorService) {
+  constructor (public readonly styleSelectorService: StyleSelectorService) {
     this.isBootstrap = this.styleSelectorService.isBootstrap;
     this.isMaterial = this.styleSelectorService.isMaterial;
   }

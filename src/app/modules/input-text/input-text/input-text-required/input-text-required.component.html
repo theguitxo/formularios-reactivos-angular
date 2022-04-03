@@ -3,23 +3,27 @@
     <div *ngIf="isBootstrap | async" class="form-floating mb-3">
       <input
         type="text"
-        id="inputTextRequired"
+        id="inputTextRequiredBootstrap"
         class="form-control"
         [ngClass]="{
           'is-invalid': (inputTextRequired.errors && !inputTextRequired.pristine),
           'is-valid': (!inputTextRequired.errors && !inputTextRequired.pristine)
         }"
         [placeholder]="labelInput"
-        [formControl]="inputTextRequired" />
-      <label for="inputTextRequired">{{ labelInput }}</label>
+        [formControl]="inputTextRequired"/>
+      <label for="inputTextRequiredBootstrap">{{ labelInput }}</label>
       <div *ngIf="inputTextRequired.errors && !inputTextRequired.pristine" class="invalid-feedback">
         <div *ngIf="inputTextRequired.errors.required">{{ requiredMessage }}</div>
       </div>
     </div>
 
-    <mat-form-field *ngIf="isMaterial | async" appearance="fill">
+    <mat-form-field
+      id="inputTextRequiredMaterial"
+      *ngIf="isMaterial | async"
+      appearance="fill">
       <mat-label>{{ labelInput }}</mat-label>
-      <input type="text" matInput
+      <input id="inputTextRequiredMaterial"
+        type="text" matInput
         [formControl]="inputTextRequired"
         [placeholder]="labelInput"
         [errorStateMatcher]="inputTextRequiredMatcher">

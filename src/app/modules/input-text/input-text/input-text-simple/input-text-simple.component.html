@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col-8">
-    <div *ngIf="isBootstrap | async" class="form-floating mb-3">
+    <div
+      id="input-text-simple-bootstrap"
+      *ngIf="isBootstrap | async"
+      class="form-floating mb-3">
       <input
         type="text"
         id="inputTextBootstrap"
@@ -10,7 +13,10 @@
       <label for="inputTextBootstrap">{{ labelInput }}</label>
     </div>
 
-    <mat-form-field *ngIf="isMaterial | async" appearance="fill">
+    <mat-form-field
+      id="input-text-simple-material"
+      *ngIf="isMaterial | async"
+      appearance="fill">
       <mat-label>{{ labelInput }}</mat-label>
       <input matInput type="text" [formControl]="inputText" [placeholder]="labelInput">
     </mat-form-field>
