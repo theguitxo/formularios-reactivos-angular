@@ -6,7 +6,6 @@ import { IOptionValueLabel } from "src/app/shared/shared.intefarce";
 @Component({
   selector: 'app-material-selector',
   templateUrl: './material-selector.component.html',
-  styleUrls: ['./material-selector.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {

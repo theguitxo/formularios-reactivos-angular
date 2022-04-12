@@ -6,18 +6,18 @@ import { ErrorStateMatcher } from "@angular/material/core";
  */
 export class Utils {
   static getJSONDefault(data: any): any {
-    return (data as any).default;
+    return data.default;
   }
 }
 
 export class ErrorMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(control: FormControl | null): boolean {
     return !!(control?.invalid && !control?.pristine);
   }
 }
 
 export class ErrorMatcherNoPristine implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(control: FormControl | null): boolean {
     return !!(control?.invalid);
   }
 }

@@ -27,7 +27,7 @@ export class CVAInputTextExampleComponent implements OnInit {
 
   randomCode(): void {
     const keys: string [] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
-    this.inputTextCVA.setValue(new Array(16).fill('').map((item) => keys[Math.floor(Math.random() * keys.length)]).join(''));
+    this.inputTextCVA.setValue(new Array(16).fill('').map(() => keys[Math.floor(Math.random() * keys.length)]).join(''));
   }
 
   disableControl(): void {
