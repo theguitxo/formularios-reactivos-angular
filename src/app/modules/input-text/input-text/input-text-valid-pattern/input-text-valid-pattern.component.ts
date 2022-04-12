@@ -33,7 +33,7 @@ export class InputTextValidPatternComponent extends SharedClass implements OnIni
     this.inputTextPattern = this.fb.control({
       value: '',
       disabled: false,
-    }, Validators.pattern(/[a-zA-Z]{5,5}-[a-zA-Z]{3,3}$/));
+    }, Validators.pattern(/[a-zA-Z]{5}-[a-zA-Z]{3}$/));
 
     this.inputTextPatternMatcher = new ErrorMatcher();
   }

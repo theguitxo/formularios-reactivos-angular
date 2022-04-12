@@ -47,7 +47,7 @@
         class="btn btn-primary"
         [disabled]="disabled"
         (click)="handleClickButton(data)">
-        <i *ngIf="icon" class="bi" [ngClass]="'bi-' + icon"></i>
+        <em *ngIf="icon" class="bi" [ngClass]="'bi-' + icon"></em>
         <span *ngIf="!icon">{{ data }}</span>
       </button>
     </div>

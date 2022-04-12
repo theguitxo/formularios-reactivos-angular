@@ -6,7 +6,7 @@
       [class.selected]="item.selected"
       [title]="item.name"
       (click)="handleClickLanguage(item.lang)">
-      <img [src]="'assets/flags/' +  item.lang + '.png'" />
+      <img [src]="'assets/flags/' +  item.lang + '.png'" alt="{{ 'flag_' + item.lang }}"/>
     </li>
   </ul>
 </div>

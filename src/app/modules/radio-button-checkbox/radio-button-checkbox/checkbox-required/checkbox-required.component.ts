@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { FormArray, FormBuilder, FormControl, Validators } from "@angular/forms";
-import { Observable } from "rxjs";
 import { StyleSelectorService } from "src/app/shared/services/style-selector.service";
 import { SharedClass } from "src/app/shared/shared.class";
 

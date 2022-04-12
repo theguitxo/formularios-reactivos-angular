@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { StyleSelectorService } from "../../services/style-selector.service";
 import { COMPONENTS_STYLE } from "../../shared.constants";
