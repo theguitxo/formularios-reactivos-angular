@@ -19,8 +19,6 @@ export class CVAInputTextComponent implements ControlValueAccessor {
   private onTouched!: Function;
   private onChanged!: Function;
 
-  constructor() {}
-
   registerOnChange(fn: any): void {
     this.onChanged = fn;
   }

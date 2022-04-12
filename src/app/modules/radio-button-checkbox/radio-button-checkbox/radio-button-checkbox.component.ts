@@ -5,6 +5,4 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   templateUrl: './radio-button-checkbox.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RadioButtonCheckboxComponent {
-  constructor() {}
-}
+export class RadioButtonCheckboxComponent {}

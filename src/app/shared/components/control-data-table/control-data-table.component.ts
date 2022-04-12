@@ -22,11 +22,6 @@ export class ControlDataTableComponent implements OnInit {
   valueIsObject!: boolean;
 
   /**
-   * Método constructor
-   */
-  constructor() {}
-
-  /**
    * OnInit: comprueba si el control recibido es un objeto o no
    */
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { MatSelectChange } from "@angular/material/select";
 import { IOptionValueLabel } from "src/app/shared/shared.intefarce";
@@ -26,8 +26,6 @@ export class MaterialSelectorComponent implements ControlValueAccessor, OnInit, 
   private onChanged!: Function;
 
   selected!: string;
-
-  constructor() {}
 
   ngOnInit(): void {
     this.checkValueByDefault();

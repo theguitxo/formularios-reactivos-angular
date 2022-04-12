@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable, Subject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { COMPONENTS_STYLE } from "../shared.constants";
 
 @Injectable()
@@ -19,8 +19,6 @@ export class StyleSelectorService {
   get isMaterial(): Observable<boolean> {
     return this.isMaterial$.asObservable();
   }
-
-  constructor() {}
 
   changeValue(value: COMPONENTS_STYLE): void {
     this.valueChanged$.next(value);

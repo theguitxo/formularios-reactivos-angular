@@ -48,7 +48,9 @@ export class CVASelectorComponent implements ControlValueAccessor, OnInit {
     this.onTouched = fn;
   }
 
-  writeValue(value: string): void {}
+  writeValue(value: string): void {
+    console.log(value);
+  }
 
   setDisabledState(value: boolean): void {
     this.disabled = value;
