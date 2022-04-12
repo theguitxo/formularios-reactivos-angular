@@ -9,7 +9,7 @@ import { COMPONENTS_STYLE } from "src/app/shared/shared.constants";
 import { SharedModule } from "src/app/shared/shared.module";
 import { InputTextSimpleComponent } from "./input-text-simple.component";
 
-describe('Test unitario para el componente InputTextSimpleComponent', () => {
+describe('Test para el componente InputTextSimpleComponent', () => {
   let component: InputTextSimpleComponent;
   let fixture: ComponentFixture<InputTextSimpleComponent>;
 

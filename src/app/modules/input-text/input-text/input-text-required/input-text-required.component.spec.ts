@@ -6,7 +6,7 @@ import { StyleSelectorService } from "src/app/shared/services/style-selector.ser
 import { SharedModule } from "src/app/shared/shared.module";
 import { InputTextRequiredComponent } from "./input-text-required.component";
 
-describe('Test unitario para el componente InputTextRequiredComponent', () => {
+describe('Test para el componente InputTextRequiredComponent', () => {
   let component: InputTextRequiredComponent;
   let fixture: ComponentFixture<InputTextRequiredComponent>;
 
@@ -33,7 +33,7 @@ describe('Test unitario para el componente InputTextRequiredComponent', () => {
     fixture.detectChanges();
   });
 
-  it('Crear el component InputTextRequiredComponent', () => {
+  it('Crear el componente InputTextRequiredComponent', () => {
     expect(component).toBeTruthy();
   });
 

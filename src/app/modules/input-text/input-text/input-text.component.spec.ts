@@ -16,7 +16,7 @@ import { InputTextValidPatternComponent } from './input-text-valid-pattern/input
 
 import { InputTextComponent } from './input-text.component';
 
-describe('InputTextComponent', () => {
+describe('Test para el componente InputTextComponent', () => {
   let component: InputTextComponent;
   let fixture: ComponentFixture<InputTextComponent>;
 

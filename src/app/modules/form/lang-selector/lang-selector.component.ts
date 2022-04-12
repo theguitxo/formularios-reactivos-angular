@@ -22,8 +22,6 @@ export class LangSelectorComponent implements ControlValueAccessor, OnInit {
 
   langs!: ILangIcon[];
 
-  constructor () {}
-
   ngOnInit(): void {
     this.langs = [
       {
@@ -63,7 +61,7 @@ export class LangSelectorComponent implements ControlValueAccessor, OnInit {
   }
 
   selectLanguage(lang: string): void {
-    this.langs.map(i => i.selected = false);
+    this.langs.forEach(i => i.selected = false);
     const item = this.langs.find(i => i.lang === lang);
     if (item) {
       item.selected = true;

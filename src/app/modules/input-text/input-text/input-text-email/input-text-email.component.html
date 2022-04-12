@@ -3,7 +3,7 @@
     <div *ngIf="isBootstrap | async" class="form-floating mb-3">
       <input
         type="email"
-        id="inputTextEmail"
+        id="inputTextEmailBootstrap"
         class="form-control"
         [ngClass]="{
           'is-invalid': (inputTextEmail.errors && !inputTextEmail.pristine),
@@ -11,7 +11,7 @@
         }"
         [placeholder]="labelInput"
         [formControl]="inputTextEmail" />
-      <label for="inputTextEmail">{{ labelInput }}</label>
+      <label for="inputTextEmailBootstrap">{{ labelInput }}</label>
       <div *ngIf="inputTextEmail.errors && !inputTextEmail.pristine" class="invalid-feedback">
         <div *ngIf="inputTextEmail.errors.email">{{ emailFormatMessage }}</div>
       </div>
@@ -20,6 +20,7 @@
     <mat-form-field *ngIf="isMaterial | async" appearance="fill">
       <mat-label>{{ labelInput }}</mat-label>
       <input type="text" matInput
+        id="inputTextEmailMaterial"
         [formControl]="inputTextEmail"
         [placeholder]="labelInput"
         [errorStateMatcher]="inputTextEmailMatcher">

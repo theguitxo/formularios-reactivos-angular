@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
+describe('Test para el componente AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
